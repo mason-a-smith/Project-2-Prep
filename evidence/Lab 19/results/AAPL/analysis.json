@@ -1,0 +1,454 @@
+{
+  "ticker": "AAPL",
+  "company": "Apple Inc.",
+  "cik": "0000320193",
+  "rows": [
+    {
+      "fiscal_year_end": "2022-09-24",
+      "evidence": {
+        "revenue": {
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2021-09-26",
+          "end": "2022-09-24",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "net_income": {
+          "tag": "us-gaap:NetIncomeLoss",
+          "start": "2021-09-26",
+          "end": "2022-09-24",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "operating_cash_flow": {
+          "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "start": "2021-09-26",
+          "end": "2022-09-24",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "capital_spending": {
+          "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "start": "2021-09-26",
+          "end": "2022-09-24",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "equity": {
+          "tag": "us-gaap:StockholdersEquity",
+          "start": null,
+          "end": "2022-09-24",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "liabilities": {
+          "tag": "us-gaap:Liabilities",
+          "start": null,
+          "end": "2022-09-24",
+          "filed": "2023-11-03",
+          "accn": "0000320193-23-000106",
+          "form": "10-K"
+        },
+        "research_and_development": {
+          "tag": "us-gaap:ResearchAndDevelopmentExpense",
+          "start": "2021-09-26",
+          "end": "2022-09-24",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "roe": {
+          "tag": "derived: NetIncomeLoss / StockholdersEquity"
+        },
+        "owner_earnings": {
+          "tag": "derived: operating_cash_flow - capital_spending; see input tags"
+        },
+        "liabilities_to_equity": {
+          "tag": "derived: Liabilities / StockholdersEquity"
+        }
+      },
+      "revenue": 394328000000,
+      "net_income": 99803000000,
+      "operating_cash_flow": 122151000000,
+      "capital_spending": 10708000000,
+      "equity": 50672000000,
+      "liabilities": 302083000000,
+      "research_and_development": 26251000000,
+      "roe": 1.9695887275023682,
+      "owner_earnings": 111443000000,
+      "liabilities_to_equity": 5.961536943479634,
+      "research_to_revenue": 0.06657148363798665
+    },
+    {
+      "fiscal_year_end": "2023-09-30",
+      "evidence": {
+        "revenue": {
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2022-09-25",
+          "end": "2023-09-30",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "net_income": {
+          "tag": "us-gaap:NetIncomeLoss",
+          "start": "2022-09-25",
+          "end": "2023-09-30",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "operating_cash_flow": {
+          "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "start": "2022-09-25",
+          "end": "2023-09-30",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "capital_spending": {
+          "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "start": "2022-09-25",
+          "end": "2023-09-30",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "equity": {
+          "tag": "us-gaap:StockholdersEquity",
+          "start": null,
+          "end": "2023-09-30",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "liabilities": {
+          "tag": "us-gaap:Liabilities",
+          "start": null,
+          "end": "2023-09-30",
+          "filed": "2024-11-01",
+          "accn": "0000320193-24-000123",
+          "form": "10-K"
+        },
+        "research_and_development": {
+          "tag": "us-gaap:ResearchAndDevelopmentExpense",
+          "start": "2022-09-25",
+          "end": "2023-09-30",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "roe": {
+          "tag": "derived: NetIncomeLoss / StockholdersEquity"
+        },
+        "owner_earnings": {
+          "tag": "derived: operating_cash_flow - capital_spending; see input tags"
+        },
+        "liabilities_to_equity": {
+          "tag": "derived: Liabilities / StockholdersEquity"
+        }
+      },
+      "revenue": 383285000000,
+      "net_income": 96995000000,
+      "operating_cash_flow": 110543000000,
+      "capital_spending": 10959000000,
+      "equity": 62146000000,
+      "liabilities": 290437000000,
+      "research_and_development": 29915000000,
+      "roe": 1.5607601454639075,
+      "owner_earnings": 99584000000,
+      "liabilities_to_equity": 4.673462491552152,
+      "research_to_revenue": 0.07804897139204509
+    },
+    {
+      "fiscal_year_end": "2024-09-28",
+      "evidence": {
+        "revenue": {
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2023-10-01",
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "net_income": {
+          "tag": "us-gaap:NetIncomeLoss",
+          "start": "2023-10-01",
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "operating_cash_flow": {
+          "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "start": "2023-10-01",
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "capital_spending": {
+          "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "start": "2023-10-01",
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "equity": {
+          "tag": "us-gaap:StockholdersEquity",
+          "start": null,
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "liabilities": {
+          "tag": "us-gaap:Liabilities",
+          "start": null,
+          "end": "2024-09-28",
+          "filed": "2025-10-31",
+          "accn": "0000320193-25-000079",
+          "form": "10-K"
+        },
+        "research_and_development": {
+          "tag": "us-gaap:ResearchAndDevelopmentExpense",
+          "start": "2023-10-01",
+          "end": "2024-09-28",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "roe": {
+          "tag": "derived: NetIncomeLoss / StockholdersEquity"
+        },
+        "owner_earnings": {
+          "tag": "derived: operating_cash_flow - capital_spending; see input tags"
+        },
+        "liabilities_to_equity": {
+          "tag": "derived: Liabilities / StockholdersEquity"
+        }
+      },
+      "revenue": 391035000000,
+      "net_income": 93736000000,
+      "operating_cash_flow": 118254000000,
+      "capital_spending": 9447000000,
+      "equity": 56950000000,
+      "liabilities": 308030000000,
+      "research_and_development": 31370000000,
+      "roe": 1.6459350307287095,
+      "owner_earnings": 108807000000,
+      "liabilities_to_equity": 5.408779631255487,
+      "research_to_revenue": 0.08022299794136074
+    },
+    {
+      "fiscal_year_end": "2025-09-27",
+      "evidence": {
+        "revenue": {
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-09-29",
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "net_income": {
+          "tag": "us-gaap:NetIncomeLoss",
+          "start": "2024-09-29",
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "operating_cash_flow": {
+          "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "start": "2024-09-29",
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "capital_spending": {
+          "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "start": "2024-09-29",
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "equity": {
+          "tag": "us-gaap:StockholdersEquity",
+          "start": null,
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "liabilities": {
+          "tag": "us-gaap:Liabilities",
+          "start": null,
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "research_and_development": {
+          "tag": "us-gaap:ResearchAndDevelopmentExpense",
+          "start": "2024-09-29",
+          "end": "2025-09-27",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "roe": {
+          "tag": "derived: NetIncomeLoss / StockholdersEquity"
+        },
+        "owner_earnings": {
+          "tag": "derived: operating_cash_flow - capital_spending; see input tags"
+        },
+        "liabilities_to_equity": {
+          "tag": "derived: Liabilities / StockholdersEquity"
+        }
+      },
+      "revenue": 416161000000,
+      "net_income": 112010000000,
+      "operating_cash_flow": 111482000000,
+      "capital_spending": 12715000000,
+      "equity": 73733000000,
+      "liabilities": 285508000000,
+      "research_and_development": 34550000000,
+      "roe": 1.5191298333175105,
+      "owner_earnings": 98767000000,
+      "liabilities_to_equity": 3.872187487285205,
+      "research_to_revenue": 0.08302075398703868
+    },
+    {
+      "fiscal_year_end": "2026-09-26",
+      "evidence": {
+        "revenue": {
+          "tag": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-09-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "net_income": {
+          "tag": "us-gaap:NetIncomeLoss",
+          "start": "2025-09-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "operating_cash_flow": {
+          "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+          "start": "2025-09-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "capital_spending": {
+          "tag": "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+          "start": "2025-09-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "equity": {
+          "tag": "us-gaap:StockholdersEquity",
+          "start": null,
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "liabilities": {
+          "tag": "us-gaap:Liabilities",
+          "start": null,
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "research_and_development": {
+          "tag": "us-gaap:ResearchAndDevelopmentExpense",
+          "start": "2025-09-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-03",
+          "accn": "0000320193-26-000026",
+          "form": "10-K"
+        },
+        "roe": {
+          "tag": "derived: NetIncomeLoss / StockholdersEquity"
+        },
+        "owner_earnings": {
+          "tag": "derived: operating_cash_flow - capital_spending; see input tags"
+        },
+        "liabilities_to_equity": {
+          "tag": "derived: Liabilities / StockholdersEquity"
+        }
+      },
+      "revenue": 478834000000,
+      "net_income": 132175000000,
+      "operating_cash_flow": 145097000000,
+      "capital_spending": 9041000000,
+      "equity": 112093000000,
+      "liabilities": 292455000000,
+      "research_and_development": 45765000000,
+      "roe": 1.17915480895328,
+      "owner_earnings": 136056000000,
+      "liabilities_to_equity": 2.609038923037121,
+      "research_to_revenue": 0.09557591983860796
+    }
+  ],
+  "checks": {
+    "ROE >= 15% every year": "pass",
+    "Owner earnings positive every year": "pass",
+    "Owner earnings grew first to last": "pass"
+  },
+  "sources": [
+    {
+      "url": "https://www.sec.gov/files/company_tickers.json",
+      "downloaded_utc": "2026-11-23T05:29:55.284941+00:00",
+      "sha256": "6b59e0ed15932cceb6917a79be900062751c66b6c038168abd9d4bff64ae0210",
+      "file": "company_tickers.json"
+    },
+    {
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "downloaded_utc": "2026-11-23T05:29:56.519340+00:00",
+      "sha256": "f085735b4d08fb116ade18d24247ffabe11df8eb52eae6556b165831f15ef1ad",
+      "file": "AAPL_companyfacts.json"
+    },
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "downloaded_utc": "2026-11-23T05:29:56.876784+00:00",
+      "sha256": "f001022596bb110c821112a8b12f794e0d5c545475b7d5f0ccfb42d9b431e57b",
+      "file": "AAPL_submissions.json"
+    }
+  ],
+  "revenue_cagr": 0.04974022934310507,
+  "growth_threshold": 0.15,
+  "panel": {
+    "Buffett": {
+      "ROE >= 15% every year": "pass",
+      "Owner earnings positive every year": "pass",
+      "Owner earnings grew first to last": "pass"
+    },
+    "Cathie Wood": {
+      "Revenue CAGR >= 15% first to last": "fail",
+      "Latest R&D / revenue >= 5%": "pass"
+    },
+    "Burry": {
+      "Operating cash flow >= net income every year": "fail",
+      "Latest liabilities / equity <= 2": "fail"
+    }
+  }
+}

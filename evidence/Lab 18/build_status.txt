@@ -1,0 +1,21 @@
+Build verification — 2026-11-22
+
+PASS: bundled engine's four offline test cases (annual periods, latest filing,
+tag priority/fallback, missing values, nonpositive equity, checks and numeric probes).
+PASS: Streamlit AppTest chart, table, checks, edited 40.0% warning, unknown ticker.
+UI checks used isolated synthetic data, deleted after the test; no synthetic
+company results are present in the live app.
+PASS: installed skill quick_validate.
+PASS: Streamlit HTTP health 200 ok at http://127.0.0.1:8504.
+
+Installed skill: C:/Users/mason/.codex/skills/buffett-sec
+Reference copy: Lab 18/buffett-sec
+Installed Streamlit via uv; command recorded in README.txt.
+
+PENDING: Mason's actual email for the required SEC User-Agent, live COST/JPM
+downloads, reconciliation to class fixture, and memos based on actual output.
+PENDING STUDENT ACTION: partner exercise, fresh-chat comparison, quiz and
+personal one-line trust decision.
+
+No claim that COST matched the instructor fixture or that JPM's live gaps
+were verified. No numbers or memos were invented to stand in for that work.

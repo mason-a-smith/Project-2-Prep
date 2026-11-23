@@ -1,0 +1,14 @@
+Build a reusable buffett-sec skill and a Streamlit business-quality app for
+Lab 18, using only our work from Lab 14 onward for coursework context.
+Read the FAskills Buffett page for philosophy only; do not install FAskills
+or access its paid data. Use keyless SEC EDGAR with my name and real email
+as User-Agent. Compute the latest five fiscal years of 10-K annual facts
+with the class's exact tag priorities, latest-filing rule, formulas and
+missing-value rules. Print all tags and filing provenance. Compute the
+three Buffett checks in code. Let the AI write a brief Buffett-inspired
+own/watch/pass business memo using only printed numbers, saved as Markdown.
+Do not use price data. Chart owner earnings and net income, display the
+table/checks/memo, flag unsupported memo numbers, and let me save my trust
+decision. Test COST against the provided class fixture without pasting it
+as source data, probe JPM's missing capex, and flag a hand-added 40.0%.
+Preserve scripts, sources, verification and Project 2 notes in Lab 18.

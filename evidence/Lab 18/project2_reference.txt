@@ -1,0 +1,70 @@
+PROJECT 2 CONTINUITY FROM LAB 14 ONWARD
+
+Lab 14: reusable numerical engine separated from Streamlit display.
+Lab 15: actual saved universe SGOV/VGIT/VCIT/ACWI, raw snapshots and explicit
+return methodology. The objective and reserve settings were provisional.
+Lab 16: measured dates differ from publication dates; later information
+must not silently enter a historical decision.
+Lab 17: preserve vintages, download timestamps and provenance; missing
+historical vintages remain unknown. See ../Lab 17/Project2_data_admission.md.
+
+Lab 18 adds a business-quality research skill. COST and JPM are class probes,
+not additions to the four-fund universe or portfolio recommendations. No
+security prices or valuation enter this week's app.
+
+The default here intentionally uses the latest 10-K reporting each period,
+which may revise older values. It is not a point-in-time backtest. For a
+historical Project 2 decision, filter filings by availability BEFORE selecting
+the latest eligible value; archive that input set. Do not assume fiscal-year
+end is the date an investor knew the result.
+
+Raw SEC response bytes, retrieval timestamps, SHA-256 hashes, periods, tags,
+accessions and filing dates are saved with each extraction. Keep code and
+snapshots together. Refreshes overwrite the current raw files, so archive
+the results folder before refreshing if a historical snapshot must survive.
+
+Numerical provenance does not establish business quality. ROE can reflect
+capital structure; cash flow can reflect working-capital timing. This lab's
+owner earnings subtracts all reported tagged capex and is a simplified
+proxy, not an estimate of maintenance capital requirements. Missing bank
+capex does not mean zero spending or a poor business.
+
+Numeric memo checking permits only numeric forms appearing in script output
+(equivalent decimal formatting is accepted). It flags unsupported tokens;
+it cannot prove a permitted number was attached to the correct metric.
+
+WHAT A SKILL IS
+A folder containing SKILL.md with YAML name and description plus optional
+scripts/references. The AI initially reads name/description to select useful
+skills without loading every instruction into context. When relevant, it
+loads the body and runs supporting scripts. Code fixes data-selection and
+arithmetic rules; the model interprets evidence. A fixed skill makes the
+process repeatable, but model wording and judgment can still vary.
+
+PARTNER EXAMPLE
+Code can compute net income / year-end equity and check the 15% threshold.
+Judgment is whether high historical returns indicate a defensible advantage
+that competitors cannot readily erode. Historical ratios alone do not prove it.
+
+READ year_row LINE BY LINE
+1. Start a row labeled with fiscal-year-end and a place for evidence.
+2. Loop through required metrics and their explicit tag priority lists.
+3. select_fact returns a matching 10-K fact or literal 'not found'.
+4. Read net income and equity; compute ROE only when inputs exist and equity
+   is positive, otherwise return 'not known'.
+5. Read operating cash flow and capex; subtract only if both are numbers,
+   otherwise return 'not found'.
+6. Compute liabilities/equity only with both inputs and positive equity.
+7. Label derived formulas separately from source XBRL tags, then return row.
+
+SOURCE LINKS (read-only philosophy, official implementation references)
+Buffett page:
+https://github.com/CinderZhang/FAskills/blob/main/financial-researcher/experts/warren_buffett.md
+SEC ticker map: https://www.sec.gov/files/company_tickers.json
+SEC facts: https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json
+SEC API docs:
+https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+Streamlit: https://docs.streamlit.io/develop/api-reference/charts/st.line_chart
+Codex skills: https://developers.openai.com/codex/skills/
+Local skill-creator guidance:
+C:/Users/mason/.codex/skills/.system/skill-creator/SKILL.md

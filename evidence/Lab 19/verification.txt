@@ -1,0 +1,6 @@
+MATCH Fiscal ends: actual=['2022-08-28', '2023-09-03', '2024-09-01', '2025-08-31', '2026-08-30']; class=['2022-08-28', '2023-09-03', '2024-09-01', '2025-08-31', '2026-08-30']
+MATCH Liabilities / equity: actual=['2.11', '1.75', '1.96', '1.64', '1.49']; class=['2.11', '1.75', '1.96', '1.64', '1.49']
+MATCH R&D missing: actual=['not found', 'not found', 'not found', 'not found', 'not found']; class=['not found', 'not found', 'not found', 'not found', 'not found']
+MATCH Revenue CAGR: actual=7.51%; class=7.51%
+MATCH Panel: actual=['pass', 'pass', 'pass', 'fail', 'not known', 'pass', 'pass']; class=['pass', 'pass', 'pass', 'fail', 'not known', 'pass', 'pass']
+MATCH Threshold probe: actual=['pass', 'not known']; class=['pass', 'not known']

@@ -1,0 +1,20 @@
+Lab 19 build status
+
+PASS: inherited Lab 18 server started at http://127.0.0.1:8518.
+PASS: Lab 19 panel server started at http://127.0.0.1:8519.
+PASS: four deterministic tests (threshold, missing inputs, boundaries, all memo flags).
+PASS: isolated Streamlit integration test (panel, columns, threshold and each memo flag).
+PASS: both new local skills validated with skill-creator quick_validate.
+Source selection: ACWI -> AAPL from issuer holdings dated November 20, 2026.
+Default Wood threshold retained at 15%; 5% is a probe.
+No prior work before Lab 14 was used.
+Partner tasks omitted by user instruction.
+
+PASS: supplied real contact email used for SEC downloads; COST and AAPL extracted.
+PASS: every COST known-answer comparison and threshold probe matches.
+PASS: six separate evidence-based memos; no unsupported numbers in any memo.
+COMPLETE: company-specific bull/bear and reflection in submission.md.
+DECISION: conditional screening decision drafted for student review.
+No class answer or synthetic fixture supplies live result files.
+PENDING: real GitHub destination and checkout URLs. No publication claimed.
+Browser connector reported no browser available; visual UI inspection not claimed.

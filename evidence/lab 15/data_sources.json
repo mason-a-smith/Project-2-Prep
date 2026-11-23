@@ -1,0 +1,18 @@
+{
+  "downloaded_at_utc": "2026-10-22T21:27:42.703541+00:00",
+  "provider": "Yahoo Finance via yfinance",
+  "yfinance_version": "1.7.0",
+  "field": "Adj Close",
+  "auto_adjust": false,
+  "method": "Last available daily adjusted close in each completed calendar month; no filling.",
+  "request_start_inclusive": "2021-09-01",
+  "request_end_exclusive": "2026-10-01",
+  "price_rows": 61,
+  "monthly_return_rows": 60,
+  "sources": {
+    "SGOV": "https://finance.yahoo.com/quote/SGOV/history/",
+    "VGIT": "https://finance.yahoo.com/quote/VGIT/history/",
+    "VCIT": "https://finance.yahoo.com/quote/VCIT/history/",
+    "ACWI": "https://finance.yahoo.com/quote/ACWI/history/"
+  }
+}

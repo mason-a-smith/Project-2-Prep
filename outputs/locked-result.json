@@ -1,0 +1,31 @@
+{
+  "run_at_utc": "2026-11-23T19:16:05.852980+00:00",
+  "pre_run_commit": {
+    "commit_sha": "f603cdeb1513b13d949a9d152c4719caca0c00f2",
+    "commit_url": "https://github.com/mason-a-smith/Project-2-Prep/commit/f603cdeb1513b13d949a9d152c4719caca0c00f2",
+    "committed_at_utc": "2026-11-23T19:15:42Z",
+    "record_sha256": "6d92380fede8211fe460d673c38f982d61669b9db94dd540bdaff62808b46b7b"
+  },
+  "fixed": {
+    "weights": [
+      0.65,
+      0,
+      0,
+      0.35
+    ],
+    "return": 0.06664254902889966,
+    "volatility": 0.05280673706378061,
+    "reserve_weight": 0.65,
+    "checks": {
+      "fully_invested": true,
+      "long_only": true,
+      "return_at_least_6_5_percent": true,
+      "reserve_at_least_3_percent": false,
+      "volatility_at_most_6_5_percent": true
+    },
+    "mandate_pass": false
+  },
+  "optimized": null,
+  "prediction_confirmed": true,
+  "decision": "STOP: 70% reserve minimum leaves no feasible grid allocation; do not relax rules."
+}

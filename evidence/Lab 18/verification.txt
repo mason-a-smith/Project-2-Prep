@@ -1,0 +1,5 @@
+Lab 18 acceptance checks
+
+COST: PENDING live SEC download; no fixture substituted
+JPM: PENDING live SEC download
+Student trust decision: awaiting Mason

@@ -1,0 +1,6 @@
+[project]
+name = "project2-portfolio-prework"
+version = "0.1.0"
+description = "Frozen portfolio coursework prepared for the Week 12 audit"
+requires-python = ">=3.11,<3.15"
+dependencies = ["numpy>=2,<3", "pandas>=2.2,<4", "streamlit>=1.40,<2"]
