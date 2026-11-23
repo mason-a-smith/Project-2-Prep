@@ -1,0 +1,17 @@
+{
+  "record_id": "RESERVE70-2026-11-23",
+  "prepared_at_utc": "2026-11-23T18:59:44.724044+00:00",
+  "AI_use": "OpenAI Codex drafted this prediction under user authorization; not AI-off.",
+  "change": "Only reserve minimum: 0.03 to 0.70; SGOV remains sole eligible fund.",
+  "unchanged": "Frozen data, 60-return window, 6.5% return target, 6.5% volatility cap, long-only fully invested 5% grid; no added cost stress.",
+  "prediction": "65/35 fails reserve; no feasible optimized portfolio. With at least 70% SGOV, even the highest-return remainder in ACWI cannot meet 6.5%. STOP, do not relax rules.",
+  "success_criterion": "Fixed allocation fails reserve and optimizer returns None; otherwise report prediction incorrect.",
+  "input_sha256": {
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+    "locked_run.py": "d9e0cba62d0145a2b992f1f4cd0ad42f67c1c57586c6b09f52eae9f6e1214f76"
+  }
+}
+
