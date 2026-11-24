@@ -9,6 +9,8 @@ import streamlit as st
 import audit_controls as controls
 from portfolio_view import render_portfolio
 from reconciliation import render as render_reconciliation
+from reconciliation import history as portfolio_history
+from current_rules import saved_verdict
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE = ROOT / 'evidence'
@@ -33,18 +35,23 @@ def show_portfolio_summary(results):
 
     with st.expander('Mandate: objective, universe, benchmark, risk and limits'):
         st.markdown(read_markdown('docs/proposed-mandate.md'))
+    st.caption('Intended user: Mason Smith and the fictional foundation investment committee. '
+               'Investment horizon: seven years; proposed monthly paper monitoring is a review cadence, not a shorter investment horizon. '
+               'Committee decision: whether to approve a paper pilot; live investment authorization remains absent.')
+    with st.expander('Edition A versus Edition B and assumption provenance'):
+        st.markdown(read_markdown('docs/edition-and-decision.md'))
     st.subheader('Committee decision')
     st.info(
         'Pilot the process in simulation only; defer capital allocation pending a confirmed mandate, '
         'trading-cost evidence, and human validation.'
     )
     st.caption(
-        'Decision horizon: proposed monthly paper decisions. Frozen market data ends September 2026; '
+        'Review cadence: proposed monthly paper reviews, with annual rebalancing. Frozen market data ends September 2026; '
         'this app reproduces the saved analysis and does not refresh prices.'
     )
 
     metric_columns = st.columns(3)
-    metric_columns[0].metric('SGOV / ACWI weights', '65% / 35%')
+    metric_columns[0].metric('SGOV / ACWI weights', f"{baseline['weights'][0]:.0%} / {baseline['weights'][3]:.0%}")
     metric_columns[1].metric('Baseline return', f"{baseline['return']:.2%}")
     metric_columns[2].metric('Baseline volatility', f"{baseline['volatility']:.2%}")
     st.caption(
@@ -52,6 +59,17 @@ def show_portfolio_summary(results):
         f"and annualized sample volatility no more than 6.5%. Baseline verdict: "
         f"{'PASS' if baseline['mandate_pass'] else 'FAIL'}. Client approval is unresolved."
     )
+    hist = portfolio_history(pd.read_csv(ROOT/'prices.csv',index_col=0),baseline['weights'])
+    loss_cols = st.columns(2)
+    loss_cols[0].metric('Historical maximum month-end drawdown', f"{hist['max_drawdown']:.2%}")
+    loss_cols[1].metric('Worst complete calendar-year return', f"{hist['worst_calendar']:.2%}")
+    st.caption('Annual-rebalanced retrospective fixed-target reconstruction, not actual or out-of-sample performance. '
+               'No foundation payouts or full trading/advisory costs; month-end data misses intramonth troughs. '
+               'Drawdown, calendar-year loss and annual volatility are distinct. See Mandate reconciliation for all periods and untested requirements.')
+    st.write('Conditional paper-allocation range: 60–65% SGOV / 35–40% ACWI, with 0% VGIT/VCIT in these separate full-window estimate and cost cases. '
+             'These paired scenario endpoints are not a confidence interval or permission to select any combination. '
+             'The last-36-month search instead selects 85% SGOV / 15% ACWI, a 20 percentage-point equity shift from the full-window baseline. '
+             'That sensitivity prevents treating the 60–65% / 35–40% span as robust across estimation windows; no averaging or automatic trading is authorized.')
 
     st.subheader('What the stress tests change')
     stress_columns = st.columns(2)
@@ -110,6 +128,7 @@ def show_portfolio_summary(results):
     for name in display_names:
         scenario = scenarios[name]
         weights = scenario['weights']
+        selected = saved_verdict(name,scenario)
         rows.append({
             'Scenario': name,
             'Weights (SGOV / VGIT / VCIT / ACWI)': ' / '.join(
@@ -119,7 +138,10 @@ def show_portfolio_summary(results):
             'Estimated volatility': f"{scenario['volatility']:.3%}",
             'SGOV reserve weight': f"{scenario['reserve_weight']:.0%}",
             'Mandate verdict': 'PASS' if scenario['mandate_pass'] else 'FAIL',
-            'Failed rules': ', '.join(k for k, v in scenario['checks'].items() if not v) or 'None',
+            'Failed rules': ' | '.join(selected['failed_rules']) or 'None',
+            'Selected limits': ' | '.join(selected['labels'][k] for k in ('return','reserve','risk')),
+            'Original mandate fully verified': 'NOT TESTED',
+            'Live capital authorized': 'No',
             'Annual incremental fee per $10,000': (
                 '—' if scenario['incremental_fee_stress_annual_dollars_per_10000'] is None
                 else f"${scenario['incremental_fee_stress_annual_dollars_per_10000']:.2f}"
@@ -202,6 +224,11 @@ def show_portfolio_summary(results):
         'unchanged rule, or paper outcomes and cost evidence undermine the assumptions. Live use stays '
         'deferred pending client approval and independent validation.'
     )
+    st.write('Reverse the original 65/35 target if its estimated return falls below 6.5%, volatility exceeds 6.5%, or reserve coverage is below $3m. '
+             'A one-percentage-point ACWI return haircut already fails the fixed target; doubled operating fees and the assumed 25 bp annual trading drag also fail it separately. '
+             'A 5% volatility ceiling leaves no feasible grid portfolio under the unchanged return target. '
+             'Reopen the allocation decision if the 36-month window is preferred, eligibility changes, costs are unsupported, or original liquidity/turnover/loss controls remain unresolved. '
+             'Feasibility after reoptimization permits further paper review only; it never authorizes live capital.')
     with st.expander('Read the full decision memo draft'):
         st.markdown(read_markdown('docs/decision-memo.md'))
 

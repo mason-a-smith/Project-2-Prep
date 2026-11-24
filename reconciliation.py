@@ -48,7 +48,7 @@ def history(prices, weights, rebalance='annual'):
     annual = pd.DataFrame(years, columns=['year','return'])
     roll12 = (1+r).rolling(12).apply(np.prod, raw=True)-1
     roll60 = (1+r).rolling(60).apply(np.prod, raw=True)**(1/5)-1
-    return {'returns': r, 'wealth': nav, 'drawdown': dd, 'calendar': annual,
+    return {'returns': r, 'wealth': nav, 'drawdown': dd, 'calendar': annual, 'rebalance':rebalance,
             'turnover': pd.DataFrame(turnovers, columns=['date','turnover']),
             'rolling60': roll60.dropna(), 'rolling12': roll12.dropna(),
             'max_drawdown': float(dd.min()), 'worst_month': float(r.min()),
@@ -65,12 +65,14 @@ def table(weights, estimate, hist):
     rows = []
     def add(rule, requirement, model, result, status, limits):
         rows.append({'Rule':rule, 'Original requirement':requirement,
-                     'Source':'Lab 13 Lab13.md: '+rule.split(' /')[0],
+                     'Authority':'AI-assisted provisional pilot' if rule.startswith('Pilot') else 'Original Lab 13 requirement',
+                     'Source':('Lab13.md: proposed personal-client section; docs/proposed-mandate.md' if rule.startswith('Pilot') else 'Lab 13 Lab13.md: '+rule.split(' /')[0]),
                      'Model':model,'Numerical result':result,'Status':status,'Limitations':limits})
     add('S1 / horizon','Seven-year investment horizon','Compare observed history with 84 months',
         f"{len(hist['returns'])}/84 months; 28 quarterly payouts = $21m nominal over seven years",'NOT TESTED',
         'Only five years available. No seven-year forecast or terminal-value requirement supplied; no payout escalation assumed.')
-    add('S1 / rebalance','Annual rebalancing','Historical diagnostic resets after December return',
+    add('S1 / rebalance','Annual rebalancing',
+        'Historical diagnostic resets after December return' if hist['rebalance']=='annual' else 'Selected buy-and-hold diagnostic: no rebalancing',
         f'{len(turnovers)} simulated rebalances','NOT TESTED','Calendar-year convention is illustrative. No actual holdings or execution record; optimizer is a static target.')
     add('S2','CPI + 4% annually, net of costs, rolling five years','Compound 60 monthly portfolio returns; CPI and all-in costs missing',
         f"{len(hist['rolling60'])} complete window(s); nominal CAGR {hist['cagr']:.4%}",'NOT TESTED',

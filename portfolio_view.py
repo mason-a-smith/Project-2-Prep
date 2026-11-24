@@ -9,6 +9,7 @@ import pandas as pd
 import streamlit as st
 
 import audit_controls as controls
+import current_rules as rules
 
 ROOT = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location('portfolio_engine', ROOT / 'portfolio.py')
@@ -28,6 +29,10 @@ def render_portfolio():
     minimum = st.sidebar.number_input(
         'Reserve minimum (%)', min_value=0.0, max_value=100.0, value=3.0, step=1.0
     ) / 100
+    ceiling = st.sidebar.number_input(
+        'Annual volatility ceiling (%)', min_value=0.0, value=6.5, step=0.1
+    ) / 100
+    selected_labels = rules.verdict([1.0],0,0,0,objective,minimum,ceiling)['labels']
     upload = st.sidebar.file_uploader('Upload prices.csv', type='csv')
     dataset = st.sidebar.selectbox(
         'Dataset (when no upload)', ['Project 2: local prices.csv', 'Meridian training']
@@ -83,8 +88,8 @@ def render_portfolio():
             )
             sleeve['reserve_eligible'] = eligible
             baseline_sleeves[index]['reserve_eligible'] = eligible
-        baseline = controls.search(baseline_sleeves, baseline_corr, objective, minimum)
-        result = controls.search(sleeves, corr, objective, minimum)
+        baseline = rules.search(baseline_sleeves, baseline_corr, objective, minimum, ceiling)
+        result = rules.search(sleeves, corr, objective, minimum, ceiling)
 
         def display(column, title, answer):
             column.subheader(title)
@@ -104,7 +109,7 @@ def render_portfolio():
         display(right, 'As loaded — all months, original returns', baseline)
         st.caption(
             'Both answers use the current objective, reserve minimum, and eligibility selections. '
-            'Search: fully invested, long-only, 5 percentage point increments.'
+            'Search: fully invested, long-only, 5 percentage point increments. A feasible result is not authorization to invest.'
         )
         if result is not None and baseline is not None:
             weight_change = max(
@@ -114,6 +119,21 @@ def render_portfolio():
             st.metric('Largest weight change (percentage points)', f'{weight_change:.2f}')
         else:
             st.info('Largest weight change unavailable unless both cases have a feasible mix.')
+        st.caption('Active scenario limits: ' + ' | '.join(selected_labels[k] for k in ('return','reserve','risk')))
+
+        with st.expander('Historical losses for the selected feasible target'):
+            if result is not None and source_key != 'meridian':
+                from reconciliation import history
+                historical_prices = pd.read_csv(BytesIO(data), index_col=0)
+                if recent:
+                    historical_prices = historical_prices.tail(37)
+                historical = history(historical_prices, result['weights'])
+                st.write(f"Maximum month-end drawdown: {historical['max_drawdown']:.2%}")
+                worst = historical['worst_calendar']
+                st.write('Worst complete calendar-year return: ' + ('NOT TESTED: no complete year' if worst is None else f'{worst:.2%}'))
+                st.caption('Annual December rebalancing of the selected fixed target; ex-post diagnostic. Edited expected returns do not rewrite historical prices. No foundation payouts or trading/advisory costs. Monthly data misses intramonth troughs; neither statistic is a future loss guarantee.')
+            else:
+                st.info('Historical losses NOT TESTED: no feasible target or no price path for training estimates.')
 
         st.subheader('Same-sample baselines and proposed-rule verdicts')
         rows = []
@@ -136,7 +156,7 @@ def render_portfolio():
             volatility = engine.portfolio_volatility(weights, covariance)
             return_ok = portfolio_return >= objective - 1e-12
             reserve_ok = reserve >= minimum - 1e-12
-            risk_ok = volatility <= controls.RISK_LIMIT + 1e-12
+            risk_ok = volatility <= ceiling + 1e-12
             rows.append({
                 'Portfolio': label,
                 'Weights (%)': ' / '.join(f'{weight * 100:.4f}' for weight in weights),
@@ -146,6 +166,7 @@ def render_portfolio():
                 'Return rule': 'PASS' if return_ok else 'FAIL',
                 'Reserve rule': 'PASS' if reserve_ok else 'FAIL',
                 'Risk rule': 'PASS' if risk_ok else 'FAIL',
+                'Selected limits': ' | '.join(selected_labels[k] for k in ('return','reserve','risk')),
                 'Verdict': 'PASS' if return_ok and reserve_ok and risk_ok else 'FAIL',
             })
         chart_left, chart_right = st.columns(2)
@@ -187,7 +208,8 @@ def render_portfolio():
         st.dataframe(rows, hide_index=True, width='stretch')
         st.caption(
             'Weights follow: ' + ' / '.join(asset['name'] for asset in sleeves) +
-            '. Proposed volatility ceiling: 6.5%; inherited benchmark is provisional.'
+            f'. Selected volatility ceiling: {ceiling:.2%}; inherited benchmark is provisional. '
+            'Only the selected numerical pilot rules are tested; original operational requirements remain NOT TESTED.'
         )
         with st.expander('Proposed educational mandate'):
             st.markdown((ROOT / 'docs' / 'proposed-mandate.md').read_text(encoding='utf-8'))
@@ -207,7 +229,7 @@ def render_portfolio():
         st.subheader('Illustrative incremental operating-fee stress')
         if all(asset['name'] in controls.FEES for asset in sleeves):
             fee_assets = controls.fee_stressed(sleeves)
-            fee_result = controls.search(fee_assets, corr, objective, minimum)
+            fee_result = rules.search(fee_assets, corr, objective, minimum, ceiling)
             cost_rows = []
             for label, answer in [
                 ('Fixed current allocation', result),
@@ -217,7 +239,7 @@ def render_portfolio():
                     cost_rows.append({'Scenario': label, 'Verdict': 'FAIL: no feasible mix'})
                     continue
                 weights = answer['weights']
-                check = controls.evaluate(weights, fee_assets, corr, objective, minimum)
+                check = rules.evaluate(weights, fee_assets, corr, objective, minimum, ceiling)
                 annual_increment = controls.annual_fee(weights, sleeves) * 10000
                 cost_rows.append({
                     'Scenario': label,
@@ -226,10 +248,12 @@ def render_portfolio():
                     'Volatility (%)': check['volatility'] * 100,
                     'Current fee exposure annual dollars per $10,000': annual_increment,
                     'Incremental annual dollars per $10,000': annual_increment,
-                    'Return rule': 'PASS' if check['checks']['return_at_least_6_5_percent'] else 'FAIL',
-                    'Reserve rule': 'PASS' if check['checks']['reserve_at_least_3_percent'] else 'FAIL',
-                    'Risk rule': 'PASS' if check['checks']['volatility_at_most_6_5_percent'] else 'FAIL',
-                    'Verdict': 'PASS' if check['mandate_pass'] else 'FAIL',
+                    'Return rule': 'PASS' if check['checks']['return'] else 'FAIL',
+                    'Reserve rule': 'PASS' if check['checks']['reserve'] else 'FAIL',
+                    'Risk rule': 'PASS' if check['checks']['risk'] else 'FAIL',
+                    'Selected limits': ' | '.join(check['labels'][k] for k in ('return','reserve','risk')),
+                    'Failed rules': ' | '.join(check['failed_rules']) or 'None',
+                    'Verdict': 'PASS' if check['feasible'] else 'FAIL',
                 })
             st.dataframe(cost_rows, hide_index=True, width='stretch')
         else:
@@ -242,7 +266,7 @@ def render_portfolio():
             'scenarios without approving a new mandate.'
         )
         st.warning(
-            'Transaction costs unresolved: spreads and commissions are unmodelled. Historical adjusted returns '
+            'Transaction costs unresolved: the dashboard includes an assumed 25 bp annual drag; observed spreads and commissions remain unavailable. Historical adjusted returns '
             'are already net of fund operating expenses; the fee stress subtracts only one additional ratio.'
         )
         st.error(

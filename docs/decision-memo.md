@@ -4,6 +4,8 @@ The analysis and decision are mine (Mason Smith); education, not investment advi
 
 # Decision memo draft
 
+Application clarification: the intended committee user, seven-year horizon versus monthly review cadence, original/provisional assumption authority, archived Edition A versus corrected AI-assisted Edition B, window sensitivity and exact reversal conditions are consolidated in [edition and decision comparison](edition-and-decision.md). Current selected-input labels are generated from actual limits; historical check identifiers remain archived evidence. Numerical feasibility is distinct from full mandate compliance and live authorization.
+
 Reconciliation update: the original S1–S10 mandate is reviewed separately in the app's **Mandate reconciliation** section. A numerical pilot PASS is not full mandate compliance. Inflation-adjusted net five-year returns, seven-year sufficiency, actual distributions, liquidity, turnover, instrument restrictions and a future loss guarantee remain unverified. The baseline annual-rebalanced retrospective diagnostic has an 8.5576% maximum month-end drawdown and a 5.4078% worst complete calendar-year loss (2022); these are different measures and do not establish a future 10% annual loss limit. No original engine, data or locked evidence was changed. See [methods and limitations](mandate-reconciliation.md).
 
 **To:** Educational investment committee  

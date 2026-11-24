@@ -1,0 +1,204 @@
+{
+  "verified_at_utc": "2026-11-24T00:57:34.907945+00:00",
+  "status": "PASS",
+  "scenario_count": 13,
+  "independent_grid_points": 1771,
+  "scenarios": {
+    "Equal weight": {
+      "return": 0.040510027984204264,
+      "volatility": 0.06466667489945425,
+      "reserve": 0.25,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Estimated annual return >= 6.5%"
+      ]
+    },
+    "Inverse volatility": {
+      "return": 0.03476160789153128,
+      "volatility": 0.013273686539786028,
+      "reserve": 0.8404584011741065,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Estimated annual return >= 6.5%"
+      ]
+    },
+    "Constrained baseline": {
+      "return": 0.06664254902889966,
+      "volatility": 0.05280673706378061,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    },
+    "Fixed baseline under stress": {
+      "return": 0.06314254902889965,
+      "volatility": 0.05280673706378061,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Estimated annual return >= 6.5%"
+      ]
+    },
+    "Reoptimized stress": {
+      "return": 0.06685567382738494,
+      "volatility": 0.06017829692477054,
+      "reserve": 0.6,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    },
+    "Fixed baseline under fee stress": {
+      "return": 0.06493754902889964,
+      "volatility": 0.05280673706378061,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Estimated annual return >= 6.5%"
+      ]
+    },
+    "Reoptimized fee stress": {
+      "return": 0.06903567382738496,
+      "volatility": 0.06017829692477054,
+      "reserve": 0.6,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    },
+    "Inherited reference benchmark": {
+      "return": 0.07541770879018708,
+      "volatility": 0.1149308537924168,
+      "reserve": 0.0,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Reserve-eligible weight >= 3%",
+        "Annual sample volatility <= 6.5%"
+      ]
+    },
+    "Last 36 months": {
+      "return": 0.0684956621492619,
+      "volatility": 0.017620947516206527,
+      "reserve": 0.85,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    },
+    "Fixed baseline last 36 months": {
+      "return": 0.10062376333444631,
+      "volatility": 0.04056379726653541,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    },
+    "Fixed baseline at 5% risk ceiling": {
+      "return": 0.06664254902889966,
+      "volatility": 0.05280673706378061,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.05
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Annual sample volatility <= 5%"
+      ]
+    },
+    "Fixed baseline transaction cost stress": {
+      "return": 0.06414254902889965,
+      "volatility": 0.05280673706378061,
+      "reserve": 0.65,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": false,
+      "failed_rules": [
+        "Estimated annual return >= 6.5%"
+      ]
+    },
+    "Reoptimized transaction cost stress": {
+      "return": 0.06835567382738494,
+      "volatility": 0.06017829692477054,
+      "reserve": 0.6,
+      "limits": {
+        "return_minimum": 0.065,
+        "reserve_minimum": 0.03,
+        "volatility_ceiling": 0.065
+      },
+      "feasible": true,
+      "failed_rules": []
+    }
+  },
+  "checks": [
+    "Independent means/covariance/baselines",
+    "All saved financial results recomputed",
+    "Independent exhaustive grid minima and infeasibility",
+    "Expenses, payout arithmetic and real compounding",
+    "Signal formula and availability",
+    "Nondefault rule labels, fee labels, window and cap interactions",
+    "All six sections and training losses unavailable",
+    "Frozen artifacts unchanged"
+  ],
+  "baseline_historical": {
+    "max_drawdown": -0.08557563816371272,
+    "worst_calendar": -0.05407806718457853,
+    "worst_12_months": -0.06319978697647177
+  },
+  "frozen_sha256": {
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "docs/locked-input.json": "6d92380fede8211fe460d673c38f982d61669b9db94dd540bdaff62808b46b7b",
+    "docs/locked-commit.json": "b55d7bde98fbaceaa02c9fd80d2bb106ff12cf5c4e52084a695c11cbf22308ba",
+    "outputs/locked-result.json": "3a39b081230032d6e87bd036f821b185529fd0d3454712bc68741ec6a5ad150d"
+  },
+  "scope": "Assistant-run implementation audit; not partner review or investment authorization"
+}

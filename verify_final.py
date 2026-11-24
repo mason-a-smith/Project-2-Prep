@@ -23,8 +23,8 @@ assert not c.signal('2026-09-30T00:00:00Z')['available']
 app = AppTest.from_file(str(R/'app.py'), default_timeout=60).run()
 assert not app.exception, app.exception
 table = next(d.value for d in app.dataframe if 'Failed rules' in d.value.columns)
-assert 'return_at_least_6_5_percent' in table.loc[table.Scenario == 'Equal weight','Failed rules'].iloc[0]
-for section in ['Interactive portfolio model','Data & timing','Company research & labs','Validation']:
+assert 'Estimated annual return >= 6.5%' in table.loc[table.Scenario == 'Equal weight','Failed rules'].iloc[0]
+for section in ['Mandate reconciliation','Interactive portfolio model','Data & timing','Company research & labs','Validation']:
     app.radio[0].set_value(section).run()
     assert not app.exception, (section, app.exception)
-print('PASS: financial scenarios, failed-rule labels, source gate, and all five app sections.')
+print('PASS: financial scenarios, actual-limit labels, source gate, and all six app sections.')

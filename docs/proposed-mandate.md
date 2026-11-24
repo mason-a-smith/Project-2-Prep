@@ -4,6 +4,8 @@ OpenAI Codex drafted this proposal under the user's authorization from recovered
 
 Committee question: should the committee permit a simulation-only pilot of the lowest-volatility feasible allocation among SGOV, VGIT, VCIT and ACWI under these proposed rules?
 
+Intended user: Mason and the fictional foundation committee. Original horizon: seven years; proposed monthly reviews do not replace original annual rebalancing. This document contains provisional AI-assisted modeling choices, not evidence of client approval. The [version and authority comparison](edition-and-decision.md) distinguishes the original mandate from these choices. Passing the numerical pilot rules establishes model feasibility only; original untested requirements and live authorization remain unresolved.
+
 | Field | Proposed rule and basis |
 | --- | --- |
 | Objective | Minimize annualized sample volatility subject to annual estimated return >=6.5%: Lab 14's 2.5% CPI estimate plus 4.0% real objective. CPI is an estimate, not a measured inflation release. |

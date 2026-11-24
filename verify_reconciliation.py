@@ -34,6 +34,7 @@ np.testing.assert_allclose(annual['turnover'].turnover, [1/6], atol=1e-12)
 np.testing.assert_allclose(annual['wealth'].iloc[-1],1.125,atol=1e-12)
 np.testing.assert_allclose(hold['wealth'].iloc[-1],1,atol=1e-12)
 assert hold['turnover'].empty
+assert hold['rebalance']=='buy and hold' and annual['rebalance']=='annual'
 for bad in [toy.iloc[[0,2,3]],toy.assign(A=-1),toy.iloc[::-1]]:
     try:
         m.history(bad,[1.])
