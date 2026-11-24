@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 R = Path(__file__).resolve().parent
-suites = ['verify_mason_locked_record.py','verify_validation.py','verify_reconciliation.py','verify_improvements.py','verify_final.py','verify_prework.py']
+suites = ['verify_final_audit.py','verify_mason_locked_record.py','verify_validation.py','verify_reconciliation.py','verify_improvements.py','verify_final.py','verify_prework.py']
 results=[]
 for suite in suites:
     started = datetime.now(timezone.utc)

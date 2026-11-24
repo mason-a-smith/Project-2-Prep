@@ -2,50 +2,32 @@ AI use: OpenAI Codex assisted with code, analysis, documentation and verificatio
 
 The analysis and decision are mine (Mason Smith); education, not investment advice.
 
-# Decision memo draft
+# Decision memo — draft for Mason's personal confirmation
 
-User-supplied locked-test result: Mason's 55/10/10/25 proposal yields 5.113379% estimated annual return, 4.795116% annual volatility and 55% SGOV reserves. All five directional/rule predictions are supported, but the allocation fails the 6.5% return minimum. Following his stated rule, reject the change and retain the original only conditionally for the simulation pilot. See the [submission-ready locked record](mason-locked-submission.md) for the pre-run commit, actual timestamps and evidence; no live authorization or independent validation follows.
+**To:** Fictional foundation committee · **Analyst:** Mason Smith  
+**Basis:** November 17, 2026 model record; later controls are disclosed overlays. Prices downloaded October 22, ending September 2026.
 
-Application clarification: the intended committee user, seven-year horizon versus monthly review cadence, original/provisional assumption authority, archived Edition A versus corrected AI-assisted Edition B, window sensitivity and exact reversal conditions are consolidated in [edition and decision comparison](edition-and-decision.md). Current selected-input labels are generated from actual limits; historical check identifiers remain archived evidence. Numerical feasibility is distinct from full mandate compliance and live authorization.
+**Approve only a simulation pilot; defer live capital.** Separate full-window baseline and estimate/cost cases produce paired endpoints of **60–65% SGOV / 35–40% ACWI**, with zero VGIT/VCIT. These are not a confidence interval or proof of robustness. The original horizon is seven years with annual rebalancing; monthly review is proposed.
 
-Reconciliation update: the original S1–S10 mandate is reviewed separately in the app's **Mandate reconciliation** section. A numerical pilot PASS is not full mandate compliance. Inflation-adjusted net five-year returns, seven-year sufficiency, actual distributions, liquidity, turnover, instrument restrictions and a future loss guarantee remain unverified. The baseline annual-rebalanced retrospective diagnostic has an 8.5576% maximum month-end drawdown and a 5.4078% worst complete calendar-year loss (2022); these are different measures and do not establish a future 10% annual loss limit. No original engine, data or locked evidence was changed. See [methods and limitations](mandate-reconciliation.md).
+| Case | SGOV / VGIT / VCIT / ACWI | Return estimate | Annual volatility | Pilot verdict |
+| --- | --- | ---: | ---: | --- |
+| Full-window target | 65 / 0 / 0 / 35% | 6.6643% | 5.2807% | PASS |
+| Equal weight | 25 / 25 / 25 / 25% | 4.0510% | 6.4667% | FAIL return |
+| Inverse volatility | 84.0458 / 7.7447 / 5.3927 / 2.8167% | 3.4762% | 1.3274% | FAIL return |
+| ACWI −1 point, original weights | 65 / 0 / 0 / 35% | 6.3143% | 5.2807% | FAIL return |
+| Same stress, reoptimized | 60 / 0 / 0 / 40% | 6.6856% | 6.0178% | PASS |
+| Mason's locked reallocation | 55 / 10 / 10 / 25% | 5.1134% | 4.7951% | FAIL return |
 
-**To:** Educational investment committee  
-**Analyst:** Mason Smith  
-**Decision record:** November 17, 2026; preparation review November 23, 2026  
-**Information boundary:** October 22, 2026 download; monthly returns through September 2026
+The pilot minimizes sample volatility on a long-only, fully invested 5% grid, with estimated return >=6.5%, SGOV reserves >=3%, volatility <=6.5%. These later AI-assisted choices do not establish original Lab 13 compliance. Four quarterly $750,000 payouts require $3m even if NAV falls. Reserve eligibility, liquidity, actual turnover, fund restrictions, net-real returns and loss enforcement remain unresolved. Adding assumed 2.5% CPI to four points gives a 6.5% proxy; exact compounded 4% real growth needs 6.6%. Neither proves the original rolling-five-year net objective.
 
-**Pilot the portfolio process in simulation and defer capital allocation.** Request approval for a paper-only pilot, with 0% of live capital committed under this proposal. Conditional model allocations span 60–65% SGOV and 35–40% ACWI across the baseline and the specified return-estimate stress; VGIT and VCIT receive zero weight in those two searches. This span describes two scenarios, not a confidence interval or a proven safe allocation range.
+**Window sensitivity reverses the target:** last-36 estimates select **85% SGOV / 15% ACWI**, 20 equity points below baseline and outside the proposed range. The first-36/next-24 chronological diagnostic stops for constrained training infeasibility. Full data were already examined, and the vintage arrived later: no untouched point-in-time holdout is claimed.
 
-## Supporting evidence
+Separate doubled operating fees reduce the original return estimate to 6.493755%; assumed 25 bp annual trading drag also fails it. A 5% volatility ceiling is infeasible with the unchanged return target. Stresses are not combined or measured execution evidence.
 
-The provisional objective is at least 6.5% estimated annual return and at least 3% reserve weight, with only SGOV eligible. The engine minimizes annualized volatility on a fully invested, long-only 5% grid.
+The annual-reset historical reconstruction has **−8.5576% month-end drawdown** and **−5.4078% worst complete calendar-year return (2022)**. These differ from volatility and do not guarantee the original 10% annual-loss promise. Foundation payouts/full costs and daily troughs are not captured.
 
-| Scenario | SGOV / ACWI | Return estimate | Volatility estimate | Reserves | Numerical mandate |
-| --- | --- | ---: | ---: | ---: | --- |
-| All-month baseline | 65% / 35% | 6.6643% | 5.2807% | 65% | Pass |
-| Original mix after ACWI estimate reduction | 65% / 35% | 6.3143% | 5.2807% | 65% | Fail return |
-| Reoptimized stress | 60% / 40% | 6.6856% | 6.0178% | 60% | Pass |
+Mason's prediction was committed before his 55/10/10/25 test. All five predictions agree with the calculation; reject the revised target for failing return. Preparation is self-reported AI-off; execution was AI-assisted, not an AI-closed run or independent validation. Preserve the [record](mason-locked-submission.md).
 
-The common-sample equal-weight portfolio returns an estimated 4.0510% with 6.4667% volatility. Inverse volatility returns 3.4762% with 1.3274% volatility. Both pass the reserve rule but fail the return objective. Their low returns explain why lower risk alone does not satisfy the provisional mandate. See [executed output](../outputs/VISIBLE_OUTPUT.md).
+**Monitor and stop:** review monthly; reopen for return below the selected minimum, volatility above its cap, approved reserves below $3m, failed data/hash/timing gates, unsupported costs or infeasibility. Resolve payout replenishment, >=90% five-day liquidity, <=25% annual turnover absent approval, fund restrictions and loss policy before live use. Reoptimization permits paper review only.
 
-The stress lowers only ACWI's annual return estimate from 12.1413% to 11.1413%. At fixed weights, expected return falls 0.35 percentage point while volatility stays constant. Reoptimization needs five percentage points more equity, raising volatility by approximately 0.7372 percentage point. This reverses the original allocation's pass verdict and demonstrates sensitivity rather than robust future performance.
-
-## Conditions, monitoring and reversal
-
-Before live adoption, confirm the client's objective, benchmark, reserve eligibility and risk limit; verify the point-in-time data rule; complete an independent cold run and human locked test; and assess costs and prospective outcomes. The inherited 40% VCIT / 60% ACWI training benchmark has not been confirmed as the client's benchmark. The proposed illustrative 6.5% ceiling is documented; client approval remains unresolved.
-
-For the proposed paper pilot, Mason would review the estimates, constraints and source availability at each completed monthly update, preserving a dated input snapshot before any decision. Recheck the unchanged allocation against all three numerical rules, compare the baselines, and record any override. This monitoring plan is proposed, not an existing performance record.
-
-Stop or reject the process when inputs are unavailable before the decision, reserve eligibility changes without approval, no feasible mix exists, a mandate rule fails, or the required risk limit remains undefined for a live allocation. The demonstrated one-percentage-point ACWI estimate reduction already reverses the original mix's return verdict; passing after reoptimization does not authorize automatic trading. Review any prospective deviation from expected performance before proceeding.
-
-## Limits and committee ask
-
-The 60-return sample supports reproducibility, not predictive accuracy. There is no holdout or realized portfolio outcome record, transaction-cost analysis, confirmed mandate, or guarantee that today's adjusted history equals every historical vintage. DGS10 is contextual and is not a substitute for fund returns. Lab 19 company screens are later supporting research and do not alter this allocation.
-
-**Committee ask:** allow a paper-only pilot after mandate clarification, and withhold live adoption until the listed evidence and controls are complete. [Validation and AI-use record](validation-and-ai-use.md) and [must-fix list](must-fix.md) define the remaining work. The student must review and own this draft before presenting it.
-
-
-## Completed application update
-
-Lab 13 has been recovered and is bundled. Its personal-client section supplies the pilot mandate; operational approval and the original loss promise remain unresolved. The app now exposes failed rules and estimate, window, operating-fee, transaction-cost and constraint scenarios. The implementation-cost scenario assumes 25 bp/year; it is not a quote. The 5% volatility-ceiling stress stops as infeasible. The locked 70% reserve test is separate; consult its commit receipt and actual result in Validation. Monitor monthly: estimated return <6.5%, annual volatility >6.5%, SGOV reserve <3%, projected annual turnover >25%, changed hashes or unavailable source timestamps trigger STOP/review. Any unsupported guarantee of a 10% maximum annual loss also stops live adoption.
+**Committee ask:** approve a bounded paper pilot and resolve the original mandate; commit **0% live capital** until approvals and missing human evidence are complete. Mason must personally confirm this draft. Sources, AI uses/checks and outstanding evidence are in [validation-and-ai-use.md](validation-and-ai-use.md) and the [manifest](submission-manifest.md).

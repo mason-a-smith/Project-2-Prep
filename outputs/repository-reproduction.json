@@ -1,0 +1,11 @@
+{
+  "observed_at_utc": "2026-11-24T02:21:03.711167+00:00",
+  "source": "Anonymous GitHub codeload ZIP of actual repository",
+  "baseline_commit": "39af61118f040d96e26fc8073061737de463bf9f",
+  "extracted_directory": "C:/Users/mason/AppData/Local/Temp/project2-repository-audit-lgh00kt3/Project-2-Prep-39af61118f040d96e26fc8073061737de463bf9f",
+  "environment": "New .venv; CPython 3.13.15; 34 locked packages installed; shared machine/cache, not independent partner or clean machine",
+  "baseline_readme_result_command_exit_code": 0,
+  "baseline_dashboard_apptest_exit_code": 0,
+  "candidate_release_full_suite_status": "PENDING verified candidate commit",
+  "known_repair": "Optional unpublished raw SEC archive absence must be reported, not fail current app tests; included archives still require original hashes"
+}

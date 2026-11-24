@@ -1,34 +1,28 @@
-# Project 2 submission manifest draft
+AI use: OpenAI Codex assisted with code, analysis, documentation and verification.
 
+The analysis and decision are mine (Mason Smith); education, not investment advice.
 
-**Publication status: local files only.** Repository URL and access confirmation are unresolved. Relative paths below become GitHub file links after this complete folder is uploaded; replace or supplement them with the actual repository URLs before submission. Do not submit invented URLs.
+# Project 2 submission manifest — current status
 
-| Part | Local location or unresolved item | Status |
-| --- | --- | --- |
-| Research evolution | Not required for Project 2 under the current course ruling | Not required; Video 1 remains required |
-| Repository | [README](../README.md), [dependencies](../pyproject.toml), [lockfile](../uv.lock), [app](../app.py) | Local package ready; GitHub URL/access unresolved |
-| Visible executed output | [VISIBLE_OUTPUT.md](../outputs/VISIBLE_OUTPUT.md), [results.json](../outputs/results.json) | Executed and readable locally |
-| Decision memo | [decision-memo.md](decision-memo.md) | AI-assisted draft for student review |
-| Educational mandate | [proposed-mandate.md](proposed-mandate.md) | Implemented illustrative rules; personal/client approval unresolved |
-| Descriptive fund signal | [signal-data-card.md](signal-data-card.md) | Local frozen September/August signal; post-download only |
-| Operating-fee stress | [cost-data-card.md](cost-data-card.md) | Fixed/reoptimized incremental stress verified; transaction costs unmodelled |
-| Validation and AI use | [validation-and-ai-use.md](validation-and-ai-use.md) | Working record; human locked test unresolved |
-| Video 1 | YouTube URL, title, duration and evidence timestamps | Unresolved |
-| Video 1 transcript | `docs/transcript-video-1.txt` | Unresolved; no recording exists here |
-| Video 2 | YouTube URL, title, duration and evidence timestamps | Unresolved |
-| Video 2 transcript | `docs/transcript-video-2.txt` | Unresolved; no recording exists here |
-| Video 3 | YouTube URL, title, duration and evidence timestamps | Unresolved |
-| Video 3 transcript | `docs/transcript-video-3.txt` | Unresolved; no recording exists here |
-| Optional deployed output | Not deployed | Optional |
+Repository is public: https://github.com/mason-a-smith/Project-2-Prep. Anonymous archive download and local reproduction were tested; instructional-team access and Brightspace receipt are not personally confirmed. Every existing written location below is a GitHub link. Missing video/transcript locations are identified rather than fabricated. Attach the same final decision-memo.md and validation-and-ai-use.md files to Brightspace.
 
-Before final submission, confirm GitHub access, video access and corrected transcripts, and attach the same final Markdown files to Brightspace. The course page and Brightspace govern the final deadline. This preparation does not claim publication or submission.
+| Row | Required part | Location | Current status |
+| --- | --- | --- | --- |
+| 1 | Research evolution / editions | [Project 2 ruling](https://github.com/CinderZhang/FIN43900-Fall2026/blob/main/projects/project-2-investment-management-application.md) | Not required for submission; optional local version comparison is not independent authorship |
+| 2 | Runnable repository | [README](https://github.com/mason-a-smith/Project-2-Prep/blob/main/README.md) | Published; full repository required, not evidence-only ZIP |
+| 3 | Visible executed output | [Committee snapshot](https://github.com/mason-a-smith/Project-2-Prep/blob/main/outputs/committee_snapshot.json), [readable audit](https://github.com/mason-a-smith/Project-2-Prep/blob/main/outputs/VISIBLE_OUTPUT.md) | Inputs, dates, estimates, verdicts visible without running code |
+| 4 | Decision memo | [decision-memo.md](https://github.com/mason-a-smith/Project-2-Prep/blob/main/docs/decision-memo.md) | Concise draft; Mason's ownership/judgment confirmation pending |
+| 5 | Validation and AI use, including locked record | [validation-and-ai-use.md](https://github.com/mason-a-smith/Project-2-Prep/blob/main/docs/validation-and-ai-use.md), [locked summary](https://github.com/mason-a-smith/Project-2-Prep/blob/main/docs/mason-locked-submission.md) | User-supplied prediction/precommit/result present; AI-assisted execution qualification disclosed |
+| 6 | Video 1: system/thinking change and AI-output check | MISSING — no YouTube URL supplied | Maximum 3:00; script is preparation only |
+| 7 | Video 1 corrected plain-text transcript | MISSING — no transcript supplied | Expected docs/transcript-video-1.txt after actual recording |
+| 8 | Video 2: code walkthrough | MISSING — no YouTube URL supplied | Maximum 5:00; must show code/data flow and validation |
+| 9 | Video 2 corrected plain-text transcript | MISSING — no transcript supplied | Expected docs/transcript-video-2.txt after actual recording |
+| 10 | Video 3: committee presentation/live app opening | MISSING — no YouTube URL supplied | Maximum 5:00; disclosures while app is running |
+| 11 | Video 3 corrected plain-text transcript | MISSING — no transcript supplied | Expected docs/transcript-video-3.txt after actual recording |
+| 12 | Optional deployment | None — localhost is not a hosted site | Not required by the published brief |
 
-## Authorized educational overlay — November 23, 2026
+Video titles, durations, stable IDs, caption checks and evidence timestamps are all **NOT RECORDED**, not guessed. Add them after recording and verify accessible Public/Unlisted YouTube links. Captions and corrected finance terms/numbers must reflect the actual spoken recordings. No placeholder transcript is passed off as speech.
 
-November 23 authorized update: the [proposed educational mandate](proposed-mandate.md) uses the Lab 14 6.5% objective (2.5% CPI estimate + 4% real objective), inherited provisional 40% VCIT / 60% ACWI reference benchmark, Lab 15 four-fund universe, long-only fully invested 5% grid and >=3% SGOV reserves. The 6.5% annualized sample-volatility ceiling is an AI-assisted illustrative proposal made at the user's request, above the existing 6.0178% ACWI stress; it is not client-validated risk appetite and requires Mason's review.
+Other evidence: [all automated logs](https://github.com/mason-a-smith/Project-2-Prep/blob/main/outputs/all-tests.json), [repository reproduction](https://github.com/mason-a-smith/Project-2-Prep/blob/main/outputs/repository-reproduction.json), [final audit](https://github.com/mason-a-smith/Project-2-Prep/blob/main/docs/final-audit.md), [hand-in locked-record ZIP](https://github.com/mason-a-smith/Project-2-Prep/blob/main/outputs/Mason_Locked_Changed_Input_Submission.zip), [blank partner form](https://github.com/mason-a-smith/Project-2-Prep/blob/main/templates/PARTNER_COLD_RUN.md). No partner run, rehearsal, ownership confirmation, compliant AI-closed execution or Brightspace receipt is fabricated.
 
-The [descriptive fund signal](signal-data-card.md) applies the Lab 16 September/August simple-return formula to the frozen local fund prices under the Lab 17 strict post-download gate. No threshold or optimizer predictor is added; DGS10 remains optional context. Uploads/Meridian without verified timestamps show unavailable. Stop historical-as-of claims at/before the October 22 download because Yahoo vintages are unavailable.
-
-The [operating-fee card](cost-data-card.md) records ratios read from official issuer pages and their date basis. Historical adjusted returns already reflect fund expenses. Hypothetical doubling subtracts only one additional current ratio. Fixed 65% SGOV / 35% ACWI: $17.05 incremental annual expense per $10,000 and 6.493755% estimated return (FAIL return). Reoptimized 60% / 40%: $18.20, 6.903567% return, 6.017830% volatility (PASS proposed rules). This is illustrative, not a fee forecast or transaction-cost evidence. Bid/ask spreads and commissions remain unmodelled; missing Vanguard spread evidence is not invented. November 23 fee/mandate overlays are not asserted known on the November 17 model decision.
-
-Stop on infeasibility, failed rules, unavailable/altered inputs or unsupported historical-as-of claims; never relax objectives or constraints automatically. Defer live capital pending client approval, trading-cost evidence and human validation. Student ownership, AI-off prediction/pre-run GitHub commit, partner cold run/rehearsal, GitHub URL/publication/access, videos/transcripts and Brightspace submission remain unresolved. No repository or commit was created. See [local audit](local-audit.md).
+The prior locked ZIP is an immutable evidence bundle from its recorded run, not the authoritative latest memo/validation record. Submit the current linked Markdown documents; retain the ZIP as supporting historical evidence.

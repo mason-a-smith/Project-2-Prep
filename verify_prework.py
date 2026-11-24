@@ -53,8 +53,18 @@ def main():
     assert controls.search(assets, corr, ceiling=.05) is None
     baseline = actual['scenarios']['Constrained baseline']
     assert controls.evaluate(baseline['weights'], assets, corr, ceiling=.05)['checks']['volatility_at_most_6_5_percent'] is False
+    omitted_archives = []
+    optional_sec = {'AAPL_companyfacts.json','AAPL_submissions.json','company_tickers.json',
+                    'COST_companyfacts.json','COST_submissions.json'}
     for filename, expected in json.loads((ROOT / 'outputs/preserved-input-hashes.json').read_text()).items():
-        assert hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() == expected, filename
+        normalized = filename.replace('\\','/')
+        file = ROOT / normalized
+        if (not file.exists() and normalized.startswith('evidence/Lab 19/results/raw/')
+                and file.name in optional_sec):
+            omitted_archives.append(normalized)
+            continue
+        assert file.exists(), f'Required preserved evidence missing: {normalized}'
+        assert hashlib.sha256(file.read_bytes()).hexdigest() == expected, filename
 
     # AppTest shares this process's module cache; bind the imported helper to
     # the copied package so source-integrity tests exercise copied inputs.
@@ -195,6 +205,7 @@ def main():
         'fresh_directory_command': 'Installed Python executable + copied run.py; working directory outside package',
         'fresh_directory_exit_code': result.returncode,
         'environment_limit': 'Same installed dependencies; no independent partner or clean-machine claim',
+        'optional_unpublished_sec_archives_absent': omitted_archives,
         'app_checks': ['Integrated dashboard renders risk-return, return-comparison, and allocation charts',
                        'Data page renders price-history and fund risk-return charts',
                        'Company page renders five-year financial-trend charts',

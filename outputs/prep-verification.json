@@ -1,9 +1,10 @@
 {
   "date": "2026-11-23",
-  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-juphy157\\Project2",
+  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-kbz08dgq\\Project2",
   "fresh_directory_command": "Installed Python executable + copied run.py; working directory outside package",
   "fresh_directory_exit_code": 0,
   "environment_limit": "Same installed dependencies; no independent partner or clean-machine claim",
+  "optional_unpublished_sec_archives_absent": [],
   "app_checks": [
     "Integrated dashboard renders risk-return, return-comparison, and allocation charts",
     "Data page renders price-history and fund risk-return charts",
@@ -23,6 +24,6 @@
     "Live-use stop and unmodelled transaction costs displayed",
     "100% objective shows no mix meets the objective"
   ],
-  "local_document_links_checked": 91,
+  "local_document_links_checked": 93,
   "scope": "Assistant-run numerical, packaging, and Streamlit AppTest checks; no partner or clean-machine run"
 }

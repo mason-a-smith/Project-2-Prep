@@ -1,3 +1,5 @@
+HISTORICAL PREPARATION RECORD — superseded for current submission status by [final audit](final-audit.md), [manifest](submission-manifest.md) and [validation record](validation-and-ai-use.md). Earlier statements about missing publication, Lab 13 or user prediction describe their original preparation date; they are not current claims.
+
 # Week 12 must fix list
 
 

@@ -1,3 +1,5 @@
+HISTORICAL PUBLICATION NOTE — current status is in [final audit](final-audit.md), [submission manifest](submission-manifest.md) and [validation record](validation-and-ai-use.md).
+
 # Publication and locked-test completion
 
 Published November 23, 2026. This status supersedes historical preparation notes that say publication or the locked record is pending.

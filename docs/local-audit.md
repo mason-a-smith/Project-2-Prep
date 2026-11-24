@@ -1,3 +1,5 @@
+HISTORICAL PREPARATION RECORD — superseded for current submission status by [final audit](final-audit.md), [manifest](submission-manifest.md) and [validation record](validation-and-ai-use.md). Earlier statements about missing publication, Lab 13 or user prediction describe their original preparation date; they are not current claims.
+
 # Local requirement audit — November 23, 2026
 
 OpenAI Codex implemented the newly authorized educational mandate, descriptive fund signal and incremental operating-fee sensitivity. Student ownership remains unresolved. Education, not investment advice.

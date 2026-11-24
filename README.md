@@ -2,37 +2,60 @@ AI use: OpenAI Codex assisted with code, analysis, documentation and verificatio
 
 The analysis and decision are mine (Mason Smith); education, not investment advice.
 
-# Portfolio decision studio
+# Project 2 — portfolio decision studio
 
-Mason's user-supplied locked allocation test is complete: [submission summary and actual result](docs/mason-locked-submission.md). The user prediction was committed before execution. The app recalculates and displays the original versus **55% SGOV / 10% VGIT / 10% VCIT / 25% ACWI** comparison in Validation and the dashboard's **Mason's locked allocation comparison** expander. Prediction authorship is self-reported AI-off; transcription, execution and verification were AI-assisted. The existing AI-assisted reserve test remains separate; no partner run is claimed.
+Personal confirmation pending: Mason must review and confirm the opening ownership statement before submission. Material assistance and limitations are in [validation-and-ai-use.md](docs/validation-and-ai-use.md).
 
-Hand-in evidence bundle: [Mason_Locked_Changed_Input_Submission.zip](outputs/Mason_Locked_Changed_Input_Submission.zip). This evidence-only ZIP includes the submitted prediction, receipts, actual results, verification logs and file-hash manifest; the complete runnable app remains in this repository.
+**Committee decision: simulation-only pilot; defer live capital.** Intended user: Mason and the fictional foundation committee. The original horizon is seven years with annual rebalancing; monthly review is a proposed monitoring cadence.
 
-Validation update: frozen committee results now use a sealed source/snapshot manifest; corrupted inputs stop calculation. Interactive selections remain hypothetical. The existing Validation section contains a retrospective first-36/next-24-return test and blank human validation templates. The full dataset was previously examined, so this is not an untouched holdout. Run **all application automated checks** with `uv run --locked python verify_all.py`; see [validation controls and limitations](docs/validation-controls.md).
+## Start from the repository
 
-Current correction: intended user is Mason and the fictional foundation committee; investment horizon is seven years. The committee decision is a paper pilot, with no live capital authorized. [Edition A versus Edition B](docs/edition-and-decision.md) compares the archived prior AI-assisted app with the current corrections. Selected return, reserve and volatility limits now appear accurately in current views; the historical engine and locked evidence remain preserved. See [corrections and verification](docs/application-corrections.md).
+Repository: https://github.com/mason-a-smith/Project-2-Prep
 
-New: select **Mandate reconciliation** for the complete original Lab 13 S1–S10 review, separate pilot rules, searchable/filterable status table, CSV export, annual-rebalanced or buy-and-hold historical drawdown, worst month, rolling 12-month loss and complete calendar-year losses. The original mandate is not fully tested by the dashboard's numerical pilot PASS. See [methods and change record](docs/mandate-reconciliation.md) and [executed verification](outputs/reconciliation-verification.json). Run `uv run --locked python verify_reconciliation.py` for the added checks.
+Use **Code → Download ZIP**, extract the complete repository, and open a terminal in the folder containing app.py, pyproject.toml and uv.lock. The smaller Mason hand-in ZIP is evidence only, not a runnable copy. Git cloning is an alternative.
 
-Start in this Project2 folder with Python 3.11–3.14 and uv installed:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if needed. From the repository root:
 
-```powershell
+~~~powershell
 uv run --locked python run.py
 uv run --locked python -m streamlit run app.py
-```
+~~~
 
-Open http://localhost:8501 (or the URL printed by Streamlit). First setup downloads locked dependencies; later calculations use bundled data without credentials. Stop the server with Ctrl+C. If the port is busy, append `--server.port 8520` to the app command. Without uv: create a virtual environment, install numpy, pandas and streamlit, then run `python -m streamlit run app.py`; uv is preferred for exact reproduction.
+The first command reproduces outputs/VISIBLE_OUTPUT.md and outputs/results.json; the second starts the web app. Open the localhost URL printed by Streamlit, normally http://localhost:8501. Stop with Ctrl+C. For a busy port, append --server.port 8520. First setup needs internet for Python/dependencies; uv selects compatible Python 3.11–3.14. Calculations then use bundled data without API keys. Preserve source bytes: a corrupted sealed input stops the app; restore the reviewed repository rather than bypassing hashes.
 
-The dashboard compares equal weight, inverse volatility and the constrained portfolio, with PASS/FAIL and each failed numerical rule. Use Interactive portfolio model to change estimates, window and constraints. Data & timing shows the frozen point-in-time signal and its data card. Validation contains the locked record and result. The source evidence remains bundled.
+Run every current application suite:
 
-Mandate recovered from [Lab 13](evidence/Lab%2013/Lab13.md): fictional $100m foundation, seven years, $0.75m quarterly payouts, CPI+4% rolling-five-year aspiration. The educational pilot minimizes sample annual volatility subject to a 6.5% annual return proxy, 3% SGOV reserves, 6.5% annual volatility ceiling, long-only fully invested SGOV/VGIT/VCIT/ACWI, on a 5% grid. Reference benchmark: 60% ACWI / 40% VCIT, a proxy for global equity / US investment-grade bonds. The risk ceiling is a proposed modeling rule; it cannot guarantee a calendar-year loss below 10%. The modeled return proxy does not prove the rolling-five-year net objective.
+~~~powershell
+uv run --locked python verify_all.py
+~~~
 
-Recommendation: simulation only, 60–65% SGOV / 35–40% ACWI, 0% VGIT/VCIT across the baseline and specified estimate/cost cases; 0% live capital authorized. These are conditional scenario endpoints, not a confidence interval. The 36-month search separately selects 85% SGOV / 15% ACWI, illustrating instability rather than expanding the recommendation. Review estimates, reserve funding, risk, costs and data at each month-end; annual rebalancing, maximum 25% annual turnover absent approval. Stop for failed rules, no feasible allocation, changed/missing snapshots, unavailable point-in-time evidence, or required operational approvals absent.
+The [final audit](docs/final-audit.md) distinguishes a repository-download/new-virtual-environment check from a human partner cold run. No public deployment is required or claimed.
 
-Stress coverage: ACWI return minus 1 percentage point; 60 versus 36 monthly returns; doubled fund expenses; assumed 25 bp annual implementation drag; risk ceiling tightened from 6.5% to 5%. Fixed and reoptimized results are separated. The tightened ceiling is infeasible. Costs are scenario assumptions, not measured execution estimates. See [cost card](docs/cost-data-card.md).
+## App and repository map
 
-[Executed results](outputs/VISIBLE_OUTPUT.md), [memo](docs/decision-memo.md), [mandate](docs/proposed-mandate.md), [signal data card](docs/signal-data-card.md), [locked prediction](docs/locked-input.json), [video scripts](docs/video-preparation.md).
+The six sidebar sections retain the dashboard, mandate reconciliation, interactive model, data/timing, separate company research, and validation. Filter the reconciliation by source/status; unsupported requirements remain **NOT TESTED**. Interactive controls/uploads are hypothetical and never amend the sealed committee snapshot. Validation shows the chronological diagnostic and Mason's locked record.
 
-The locked test changes only the SGOV minimum from 3% to 70%. `uv run --locked python locked_run.py` refuses to run without a GitHub precommit receipt. Its prediction is AI-assisted under the user's instruction; no AI-off or independent human prediction is claimed. Prior ACWI sensitivity results are not presented as new predictions. Publication and execution status appear in Validation.
+| Files | Purpose |
+| --- | --- |
+| app.py, portfolio_view.py | Web interface |
+| portfolio.py, audit_controls.py | Preserved original engine/control evidence |
+| current_rules.py, data_integrity.py | Actual-input labels and safe stops |
+| prices.csv, data_sources.json, integrity-manifest.json | Frozen data and hashes |
+| reconciliation.py, chronological.py | Mandate/loss/36-24 diagnostics |
+| [Memo](docs/decision-memo.md), [validation record](docs/validation-and-ai-use.md) | Authoritative written drafts |
+| [Manifest](docs/submission-manifest.md), [scripts](docs/video-preparation.md) | Locations and missing human materials |
+| [Visible output](outputs/VISIBLE_OUTPUT.md), [snapshot](outputs/committee_snapshot.json) | Executed evidence readable without running code |
 
-Verification: `uv run --locked python verify_final.py`. This checks actual app views and financial behaviors; it is not a partner cold run. Videos are supplied as recording scripts, not invented recordings. Client approval, realized performance and verified execution liquidity remain outside this educational model.
+## Mandate, results and limits
+
+Original [Lab 13](evidence/Lab%2013/Lab13.md): $100m foundation; $750,000 quarterly payouts; $3m twelve-month reserves; seven years; CPI+4% net over rolling five years; 60/40 global-equity/US-investment-grade reference and operational limits. The four ETFs, SGOV proxy, 5% grid, 6.5% arithmetic-return proxy and 6.5% volatility ceiling are later provisional AI-assisted choices, not client approval. Exact 4% real growth at assumed 2.5% inflation requires 6.6% nominal. Volatility is not a maximum drawdown or annual-loss cap.
+
+Yahoo adjusted closes were downloaded October 22, 2026; 61 prices through September 2026 give 60 returns. Local source hashes/transformations are verified, not provider authenticity or earlier vintages. See [signal](docs/signal-data-card.md) and [cost](docs/cost-data-card.md) cards.
+
+Baseline 65/0/0/35: 6.6643% estimated return, 5.2807% volatility. Conditional full-window scenario endpoints span 60–65% SGOV / 35–40% ACWI, with zero VGIT/VCIT; this is not a confidence interval. The 36-month search instead selects 85/0/0/15. The retrospective first-36/next-24 diagnostic stops for training infeasibility; previously examined data are not an untouched holdout. Annual-reset historical maximum month-end drawdown is −8.5576%; worst complete calendar-year return is −5.4078% (2022), excluding foundation payouts/full implementation costs and intramonth troughs.
+
+Mason's [locked change](docs/mason-locked-submission.md), committed before execution, produces 55/10/10/25: **5.113379% return, 4.795116% volatility, 55% reserves; FAIL return**. Reject it under his rule; retain the original only conditionally for simulation. Prediction preparation is self-reported AI-off; execution was AI-assisted, a disclosed qualification against the shared course AI-closed-run wording.
+
+Stop/reopen for failed selected limits, less than $3m approved reserves, infeasibility, corrupted/mistimed inputs, unsupported costs or unresolved original controls. Estimate, window, fee, assumed 25 bp trading-cost and constraint stresses are separate. No live capital is authorized.
+
+[Hand-in evidence ZIP](outputs/Mason_Locked_Changed_Input_Submission.zip) preserves the historical locked run. Videos, corrected transcripts, partner evidence, personal confirmation and Brightspace receipt remain outstanding. Exact rubric scoring is pending the unavailable scoring anchors; no grade is invented.
