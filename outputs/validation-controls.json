@@ -1,0 +1,167 @@
+{
+  "verified_at_utc": "2026-11-24T01:08:28.490584+00:00",
+  "status": "PASS",
+  "checks": [
+    "All sealed source/output hashes",
+    "Four raw-to-monthly reconstructions",
+    "Recorded timestamp gate",
+    "Malformed CSV and invalid weights/eligibility rejected",
+    "Corrupted manifest/raw/source/snapshot stops",
+    "Console failed gate writes no results",
+    "Dashboard corrupted-source safe stop",
+    "Known-answer covariance/return/reserves/cost units",
+    "Independent 36-month grid infeasibility",
+    "Evaluation perturbation leaves training selection unchanged",
+    "36/24 disjoint returns",
+    "Blank templates and retrospective disclosure visible"
+  ],
+  "scope": "Assistant-run tests; not AI-off prediction, partner cold run, independent review or untouched holdout",
+  "integrity": {
+    "status": "PASS",
+    "downloaded_at_utc": "2026-10-22T21:27:42.703541+00:00",
+    "decision_cutoff": "2026-11-17T00:00:00+00:00",
+    "reconstructed_rows": {
+      "SGOV": 61,
+      "VGIT": 61,
+      "VCIT": 61,
+      "ACWI": 61
+    },
+    "verified_hashes": {
+      "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+      "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+      "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+      "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+      "evidence/Lab 13/Lab13.md": "57a25370efed176bf51ecfd288d0f8677522e513985afcca08eb358963dfe64f",
+      "docs/cost-data-card.md": "9966ad60a0ffcce79ff0e02536edd41f26e2ae2b21ccb910fadfb472bd4f0833",
+      "evidence/lab 15/download_prices.py": "fc3e46d08fec068d119169d2b7041ec11c1badb559c8f855e43f67daa1db6034",
+      "evidence/lab 15/raw/SGOV_daily.csv": "4dddae49cedce57d3a3ea22bab3fbc3ac5c010247ba016bd639986bf943d82a4",
+      "evidence/lab 15/raw/VGIT_daily.csv": "693148ff17fac9a6a911d491e34a300e4ae7cbf4b3992132aec8667e1b61bbc7",
+      "evidence/lab 15/raw/VCIT_daily.csv": "9ad86234a7d06e4ad90a67bfaaa8ff63ce82579350d597c62c4845fb39948adb",
+      "evidence/lab 15/raw/ACWI_daily.csv": "8215d495e8b690418812a9119939e3f731f05704b8eada81152ee669955cb356",
+      "outputs/committee_snapshot.json": "8da14c4267a395a371cf81dd27ba1ec5a31b14a189f005ef9855116a604fc861"
+    },
+    "limitation": "Recorded retrieval timestamp and snapshot bytes verified locally, not independently authenticated provider timestamps or historical adjusted-price vintages."
+  },
+  "chronological": {
+    "status": "CONSTRAINED STOP: no feasible training allocation",
+    "training_price_start": "2021-09-30",
+    "training_return_start": "2021-10-29",
+    "training_end": "2024-09-30",
+    "training_months": 36,
+    "evaluation_boundary_price": "2024-09-30",
+    "evaluation_return_start": "2024-10-31",
+    "evaluation_end": "2026-09-30",
+    "evaluation_months": 24,
+    "training_results": {
+      "Equal weight": {
+        "weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "return": 0.02976140899617204,
+        "reserve_weight": 0.25,
+        "volatility": 0.07623072360405322,
+        "limits": {
+          "return_minimum": 0.065,
+          "reserve_minimum": 0.03,
+          "volatility_ceiling": 0.065
+        },
+        "labels": {
+          "fully_invested": "Weights total = 100%",
+          "long_only": "All weights >= 0%",
+          "return": "Estimated annual return >= 6.5%",
+          "reserve": "Reserve-eligible weight >= 3%",
+          "risk": "Annual sample volatility <= 6.5%"
+        },
+        "checks": {
+          "fully_invested": true,
+          "long_only": true,
+          "return": false,
+          "reserve": true,
+          "risk": false
+        },
+        "feasible": false,
+        "failed_rules": [
+          "Estimated annual return >= 6.5%",
+          "Annual sample volatility <= 6.5%"
+        ],
+        "live_capital_authorized": false
+      },
+      "Inverse volatility": {
+        "weights": [
+          0.8290641018720678,
+          0.08410431719271982,
+          0.05573683296518573,
+          0.031094747970026638
+        ],
+        "return": 0.031288808544007875,
+        "reserve_weight": 0.8290641018720678,
+        "volatility": 0.016950929855744624,
+        "limits": {
+          "return_minimum": 0.065,
+          "reserve_minimum": 0.03,
+          "volatility_ceiling": 0.065
+        },
+        "labels": {
+          "fully_invested": "Weights total = 100%",
+          "long_only": "All weights >= 0%",
+          "return": "Estimated annual return >= 6.5%",
+          "reserve": "Reserve-eligible weight >= 3%",
+          "risk": "Annual sample volatility <= 6.5%"
+        },
+        "checks": {
+          "fully_invested": true,
+          "long_only": true,
+          "return": false,
+          "reserve": true,
+          "risk": true
+        },
+        "feasible": false,
+        "failed_rules": [
+          "Estimated annual return >= 6.5%"
+        ],
+        "live_capital_authorized": false
+      }
+    },
+    "evaluation_results": {
+      "Equal weight": {
+        "weights": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "months": 24,
+        "total_return": 0.1192943830916926,
+        "cagr": 0.057967099248219744,
+        "annual_sample_volatility": 0.043082173152840186,
+        "max_month_end_drawdown": -0.02394433648641303,
+        "worst_calendar_return": 0.10832748190194152
+      },
+      "Inverse volatility": {
+        "weights": [
+          0.8290641018720678,
+          0.08410431719271982,
+          0.05573683296518573,
+          0.031094747970026638
+        ],
+        "months": 24,
+        "total_return": 0.0829464626616665,
+        "cagr": 0.04064713647886742,
+        "annual_sample_volatility": 0.00809942452945528,
+        "max_month_end_drawdown": -0.0020740805418546504,
+        "worst_calendar_return": 0.053509305673526075
+      }
+    },
+    "constrained_evaluation": null,
+    "rules": {
+      "return_minimum": 0.065,
+      "reserve_minimum": 0.03,
+      "volatility_ceiling": 0.065
+    },
+    "method": "Target weights derived solely from first 36 returns; fixed annual-December rebalancing convention, no evaluation-based tuning. Evaluation starts from unit NAV at boundary price. Separate baselines are descriptive even if training rules fail.",
+    "limitations": "Retrospective chronological diagnostic: the full dataset was previously examined. Not an untouched holdout, independent validation, or proof of prospective robustness. The October 2026 adjusted-price vintage was not available at the September 2024 training boundary. No actual trading-as-of claim. No foundation payouts, full implementation costs, or inflation adjustment; no live authorization."
+  }
+}

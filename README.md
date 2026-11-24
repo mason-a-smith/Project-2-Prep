@@ -4,6 +4,8 @@ The analysis and decision are mine (Mason Smith); education, not investment advi
 
 # Portfolio decision studio
 
+Validation update: frozen committee results now use a sealed source/snapshot manifest; corrupted inputs stop calculation. Interactive selections remain hypothetical. The existing Validation section contains a retrospective first-36/next-24-return test and blank human validation templates. The full dataset was previously examined, so this is not an untouched holdout. Run **all application automated checks** with `uv run --locked python verify_all.py`; see [validation controls and limitations](docs/validation-controls.md).
+
 Current correction: intended user is Mason and the fictional foundation committee; investment horizon is seven years. The committee decision is a paper pilot, with no live capital authorized. [Edition A versus Edition B](docs/edition-and-decision.md) compares the archived prior AI-assisted app with the current corrections. Selected return, reserve and volatility limits now appear accurately in current views; the historical engine and locked evidence remain preserved. See [corrections and verification](docs/application-corrections.md).
 
 New: select **Mandate reconciliation** for the complete original Lab 13 S1–S10 review, separate pilot rules, searchable/filterable status table, CSV export, annual-rebalanced or buy-and-hold historical drawdown, worst month, rolling 12-month loss and complete calendar-year losses. The original mandate is not fully tested by the dashboard's numerical pilot PASS. See [methods and change record](docs/mandate-reconciliation.md) and [executed verification](outputs/reconciliation-verification.json). Run `uv run --locked python verify_reconciliation.py` for the added checks.

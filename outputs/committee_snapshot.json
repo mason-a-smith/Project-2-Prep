@@ -1,0 +1,357 @@
+{
+  "generated_at_utc": "2026-11-24T00:56:00.918163+00:00",
+  "model_decision_date": "2026-11-17",
+  "prep_review_date": "2026-11-23",
+  "recommendation": "Pilot in simulation only; defer capital allocation pending confirmed mandate and validation.",
+  "data_downloaded_at_utc": "2026-10-22T21:27:42.703541+00:00",
+  "price_window": "September 2021 through September 2026",
+  "return_window": "October 2021 through September 2026; 60 monthly returns",
+  "weight_order": [
+    "SGOV",
+    "VGIT",
+    "VCIT",
+    "ACWI"
+  ],
+  "provisional_rules": {
+    "annual_return_objective": 0.065,
+    "reserve_minimum": 0.03,
+    "reserve_eligible": [
+      "SGOV"
+    ],
+    "grid_step": 0.05,
+    "annual_volatility_ceiling": 0.065,
+    "status": "Proposed educational mandate; ceiling is an AI-assisted illustrative proposal, not client-validated"
+  },
+  "changed_input": {
+    "ACWI_annual_return_old": 0.12141317140920847,
+    "ACWI_annual_return_new": 0.11141317140920848,
+    "status": "AI-assisted sensitivity; not a human Locked Changed-Input Record"
+  },
+  "point_in_time_signal": {
+    "available": true,
+    "decision_cutoff": "2026-11-17T00:00:00+00:00",
+    "downloaded_at_utc": "2026-10-22T21:27:42.703541+00:00",
+    "prior_month": "2026-08-31",
+    "latest_completed_month": "2026-09-30",
+    "simple_returns": {
+      "SGOV": 0.002958668065756509,
+      "VGIT": -0.023170797613081717,
+      "VCIT": -0.030216708688745264,
+      "ACWI": -0.01188690870290221
+    },
+    "use": "Descriptive context only; not an optimizer predictor. No later publications loaded."
+  },
+  "cost_stress": {
+    "method": "Subtract one current issuer expense ratio incrementally from already-net historical returns; hypothetical doubling, not forecast or transaction costs",
+    "expense_ratios": {
+      "SGOV": 0.0009,
+      "VGIT": 0.0003,
+      "VCIT": 0.0003,
+      "ACWI": 0.0032
+    },
+    "retrieved": "2026-11-23",
+    "Vanguard_expenseRatioAsOfDate": "2025-12-19",
+    "iShares_market_spread_as_of": "2026-11-20",
+    "card": "docs/cost-data-card.md",
+    "timing": "Nov 23 sensitivity overlay; not information asserted known on Nov 17 model decision"
+  },
+  "scenarios": {
+    "Equal weight": {
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "return": 0.04051002798420427,
+      "volatility": 0.06466667489945424,
+      "reserve_weight": 0.25,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": false,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 11.75,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Inverse volatility": {
+      "weights": [
+        0.8404584011741065,
+        0.07744734411026422,
+        0.05392687663144974,
+        0.02816737808417946
+      ],
+      "return": 0.034761607891531286,
+      "volatility": 0.013273686539786025,
+      "reserve_weight": 0.8404584011741065,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": false,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 8.859604371485842,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Constrained baseline": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.06664254902889966,
+      "volatility": 0.05280673706378061,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Fixed baseline under stress": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.06314254902889965,
+      "volatility": 0.05280673706378061,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": false,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Reoptimized stress": {
+      "weights": [
+        0.6,
+        0.0,
+        0.0,
+        0.4
+      ],
+      "return": 0.06685567382738494,
+      "volatility": 0.060178296924770544,
+      "reserve_weight": 0.6,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 18.2,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Fixed baseline under fee stress": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.06493754902889964,
+      "volatility": 0.05280673706378061,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": false,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": 17.05
+    },
+    "Reoptimized fee stress": {
+      "weights": [
+        0.6,
+        0.0,
+        0.0,
+        0.4
+      ],
+      "return": 0.06903567382738496,
+      "volatility": 0.060178296924770544,
+      "reserve_weight": 0.6,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 18.2,
+      "incremental_fee_stress_annual_dollars_per_10000": 18.2
+    },
+    "Inherited reference benchmark": {
+      "weights": [
+        0,
+        0,
+        0.4,
+        0.6
+      ],
+      "return": 0.07541770879018708,
+      "volatility": 0.1149308537924168,
+      "reserve_weight": 0,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": false,
+        "volatility_at_most_6_5_percent": false
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 20.400000000000002,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Last 36 months": {
+      "weights": [
+        0.85,
+        0.0,
+        0.0,
+        0.15
+      ],
+      "return": 0.0684956621492619,
+      "volatility": 0.01762094751620653,
+      "reserve_weight": 0.85,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 12.45,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Fixed baseline last 36 months": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.10062376333444631,
+      "volatility": 0.04056379726653541,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Fixed baseline at 5% risk ceiling": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.06664254902889966,
+      "volatility": 0.05280673706378061,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": false
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Fixed baseline transaction cost stress": {
+      "weights": [
+        0.65,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "return": 0.06414254902889965,
+      "volatility": 0.05280673706378061,
+      "reserve_weight": 0.65,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": false,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": false,
+      "current_fee_annual_dollars_per_10000": 17.05,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    },
+    "Reoptimized transaction cost stress": {
+      "weights": [
+        0.6,
+        0.0,
+        0.0,
+        0.4
+      ],
+      "return": 0.06835567382738494,
+      "volatility": 0.060178296924770544,
+      "reserve_weight": 0.6,
+      "checks": {
+        "fully_invested": true,
+        "long_only": true,
+        "return_at_least_6_5_percent": true,
+        "reserve_at_least_3_percent": true,
+        "volatility_at_most_6_5_percent": true
+      },
+      "mandate_pass": true,
+      "current_fee_annual_dollars_per_10000": 18.2,
+      "incremental_fee_stress_annual_dollars_per_10000": null
+    }
+  },
+  "verification": [
+    "Matches archived all-month result to 1e-12",
+    "Covariance matches independent pandas sample covariance annualized by 12",
+    "All allocations are long-only and fully invested",
+    "Fee stress fails fixed weights and passes after reoptimization",
+    "5% volatility ceiling stops without relaxing return or reserve rules",
+    "Signal unavailable at/before snapshot and for unverified sources",
+    "Impossible 100% annual objective returns no feasible mix",
+    "Stress fails at fixed weights and passes after reoptimization"
+  ],
+  "sha256": {
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "app.py": "b2e1dc3974208d53e096d6be1694997b5d489b3a859cb8bcc56e61e691de3c5b",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "run.py": "9fa0751897356e4b36f3a07472b044dc87721e1f951e7f3fd6b0fe2faba6a31a",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "streamlit": "1.67.0"
+  }
+}

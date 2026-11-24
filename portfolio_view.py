@@ -10,6 +10,7 @@ import streamlit as st
 
 import audit_controls as controls
 import current_rules as rules
+from data_integrity import verify as verify_frozen, parse_prices
 
 ROOT = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location('portfolio_engine', ROOT / 'portfolio.py')
@@ -20,6 +21,7 @@ spec.loader.exec_module(engine)
 def render_portfolio():
     st.subheader('Interactive portfolio model')
     st.caption(
+        'HYPOTHETICAL INTERACTIVE SCENARIO: selections never modify the frozen committee record. '
         'Change return assumptions, reserve rules, or the estimation window to examine conditional scenarios. '
         'Uploaded inputs are not treated as verified point-in-time sources.'
     )
@@ -48,6 +50,9 @@ def render_portfolio():
             st.caption('Meridian training estimates. The 36-month switch applies to uploaded prices only.')
         else:
             data = upload.getvalue() if upload is not None else (ROOT / 'prices.csv').read_bytes()
+            if upload is None:
+                verify_frozen(ROOT)
+            parse_prices(data)  # catches duplicate headers before pandas can rename them
             source_key = hashlib.sha256(data).hexdigest()
             baseline_sleeves, baseline_corr = engine.estimate_from_csv(BytesIO(data))
             sleeves, corr = engine.estimate_from_csv(BytesIO(data), recent)

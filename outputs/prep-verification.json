@@ -1,6 +1,6 @@
 {
   "date": "2026-11-23",
-  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-gdo3xujr\\Project2",
+  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-0rbeiv75\\Project2",
   "fresh_directory_command": "Installed Python executable + copied run.py; working directory outside package",
   "fresh_directory_exit_code": 0,
   "environment_limit": "Same installed dependencies; no independent partner or clean-machine claim",
@@ -17,12 +17,12 @@
     "100% reserves is infeasible without relaxing return objective",
     "Fee stress fixed/reoptimized verdicts agree with runner; no double deduction",
     "PIT formula and strict timestamp boundary verified; Meridian unavailable",
-    "Changed snapshot/provenance hashes stop signal use in copied app",
+    "Changed snapshot/provenance hashes stop all local portfolio calculation in copied app",
     "Illustrative risk ceiling rejects infeasible risk without relaxing rules",
     "Preserved engine, prices, provenance and all evidence hashes unchanged",
     "Live-use stop and unmodelled transaction costs displayed",
     "100% objective shows no mix meets the objective"
   ],
-  "local_document_links_checked": 76,
+  "local_document_links_checked": 80,
   "scope": "Assistant-run numerical, packaging, and Streamlit AppTest checks; no partner or clean-machine run"
 }

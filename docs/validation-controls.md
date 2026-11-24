@@ -1,0 +1,47 @@
+AI use: OpenAI Codex implemented and ran automated integrity, robustness and financial tests.
+
+The analysis and decision are mine (Mason Smith); education, not investment advice.
+
+# Validation and data-integrity release
+
+This release strengthens existing views rather than adding a new application workflow. Source verification, the chronological diagnostic and blank templates live in the existing Validation section. No human prediction, changed-input choice, independent partner run, approval or signature has been generated.
+
+## Frozen sources and safe stops
+
+`integrity-manifest.json` records SHA-256 hashes for the original engine/controls, source metadata, price file, original Lab 13 evidence, fee card, download transformation, all four original daily CSVs and the new frozen committee snapshot. Its own SHA-256 is pinned in `data_integrity.py`. Checks are against this reviewed release, not hashes generated from whatever files happen to be present at runtime. Changed or absent files stop portfolio reporting/calculation before an allocation or new console output is produced. Replacing the manifest with newly computed hashes does not pass the pinned-manifest check. This is local tamper detection, not a cryptographic signature or defense against an actor able to modify the validation code and its pins; source changes require review and a new release.
+
+The recorded source is Yahoo Finance adjusted close, `auto_adjust=False`, via the archived yfinance download code. The four raw files reproduce exactly the final observed trading day in every completed month: 61 aligned prices from September 2021–September 2026, then 60 simple monthly returns. Reconciliation tolerance is $1e-10 absolute for the 12-decimal monthly CSV serialization. No missing months are filled. Source URLs, field definition, dimensions, positive finite prices, raw dates, request bounds and actual monthly endpoints are verified. Arithmetic monthly mean ×12 and sample covariance ×12 are independently checked by the financial audit.
+
+The recorded download is October 22, 2026 at 21:27:42.703541 UTC. The November 17 frozen decision cutoff is later. Equal/earlier or timezone-free cutoffs are rejected. These are locally recorded timestamps, not independently authenticated provider publication timestamps. Adjusted-price vintages can be revised; raw-to-monthly consistency and hashes cannot prove the original provider's market-data accuracy or availability at earlier historical dates. The existing Lab 17 vintage-admission restrictions remain in force. No fresh Yahoo data are substituted.
+
+Upload validation checks the original CSV headers before pandas can rename duplicates. Invalid dates, gaps, missing/nonpositive/nonfinite prices, duplicate/empty tickers, bad weights, non-Boolean reserve flags, invalid rule inputs and indefinite covariance stop the affected calculation. A structurally valid upload remains hypothetical and has no verified availability timestamp; it is never substituted into frozen committee results. An infeasible search returns no allocation; limits are not relaxed.
+
+## Source recheck and fee assumptions
+
+Existing annual ratios remain SGOV 0.09%, VGIT 0.03%, VCIT 0.03%, ACWI 0.32%. Rechecked issuer evidence: [SGOV](https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf), [ACWI](https://www.ishares.com/us/products/239600/ishares-msci-acwi-etf), [VGIT advisor profile](https://advisors.vanguard.com/investments/products/vgit/vanguard-intermediate-term-treasury-etf), and [VCIT advisor profile](https://advisors.vanguard.com/investments/products/vcit/vanguard-intermediate-term-corporate-bond-etf?manInfo=true). Vanguard's indexed advisor profiles give the ratio date as December 19, 2025. The regular Vanguard investor profile pages returned no readable text in this recheck; the advisor profiles provide the corroboration. This review is later evidence and does not retroactively establish fee knowledge on November 17. No historical fee schedule is inferred. The original fee data card is preserved and sealed; this separate note records the additional corroboration.
+
+Adjusted fund returns already reflect operating expenses. The hypothetical doubling stress deducts only one additional ratio. The trading-cost stress remains an explicitly assumed 25% turnover ×100 bp cost per traded dollar =25 bp annual NAV drag, not a measured spread or actual execution model. Neither corroborating a fee ratio nor passing a stress establishes approved client costs or liquidity.
+
+## Frozen committee record versus scenarios
+
+`outputs/committee_snapshot.json` is a sealed copy of the previously verified numerical committee record. It is loaded by the committee dashboard and mandate reconciliation. Its source/code hashes refer to the historical run that produced it; they do not assert that the old app hash equals today's revised interface. `run.py` still reproduces the legacy numerical audit into `outputs/results.json`; it first enforces the new integrity gate and never overwrites the sealed committee snapshot. Historical check identifiers in the legacy output are retained; current views use actual selected limits.
+
+Interactive expected-return, eligibility, risk, window and uploaded-data changes are hypothetical scenarios. They do not write or amend the frozen committee record. The chronological test is a separate retrospective diagnostic; it also does not replace committee results. All statuses remain simulation-only, not live authorization.
+
+## Chronological robustness: first 36 returns, remaining 24
+
+Training uses 37 prices (September 30, 2021–September 30, 2024) to generate the first 36 monthly returns. Evaluation uses the same boundary price and the following 24 prices, so its returns run October 2024–September 2026. The boundary price is shared; no return is shared. Price slicing occurs before means, covariance, inverse-volatility weights or optimization. No evaluation statistic selects a weight, constraint or estimation method.
+
+The original 6.5% return target, 3% SGOV reserve and 6.5% volatility ceiling produce **no feasible constrained training allocation**. The process therefore stops that branch; it does not evaluate the full-sample 65/35 allocation in its place or loosen a rule. Equal and inverse-volatility baselines have separate descriptive 24-month evaluations using their training-only targets, even though they fail training mandate checks. Evaluation uses December annual resets, unit NAV at the boundary, no external withdrawals and no full implementation costs. Only complete calendar years are used for worst-calendar-return metrics.
+
+**The full dataset was previously examined.** This is not an untouched holdout, independent validation, or a prospective test. The adjusted-price snapshot was downloaded in October 2026, after the September 2024 training boundary, so it is not a historically executable point-in-time backtest. A perturbation test changes only evaluation-period prices and verifies that all training estimates/weights/feasibility remain identical. A separate exhaustive grid calculation confirms training infeasibility. No passing or independent result is fabricated.
+
+## Tests and human evidence
+
+Run all current application suites with `uv run --locked python verify_all.py`. It runs each suite in a fresh process and saves exit codes, timestamps and logs in `outputs/all-tests.json`. `verify_validation.py` adds corruption tests, a console no-write check after failed gates, duplicate-header and other invalid-input tests, known-answer two-asset covariance/return/reserves and cost-unit arithmetic, chronology/leakage checks and UI safe-stop tests. `verify_reconciliation.py` covers known-answer drawdown/compounding/rebalance turnover. `verify_improvements.py` recomputes all 13 stress/baseline scenarios and independently enumerates the 1,771-grid search. Existing final/prework regressions retain all app-section, company, chart and source-gate tests; corruption expectations were strengthened from a signal warning to stopping local portfolio calculations.
+
+These are assistant-run automated implementation checks. They do not count as a human AI-off prediction or independent partner cold run. Blank templates are [AI-off record](../templates/AI_OFF_LOCKED_CHANGED_INPUT.md) and [partner cold run](../templates/PARTNER_COLD_RUN.md). Complete the pre-run prediction yourself with AI off and commit it before running your selected test; leave that pre-run section unchanged when adding the actual result. Partner fields remain for the partner's actual actions and observations. The historical AI-assisted locked record is preserved separately and explicitly labeled as such.
+
+The legacy prework test previously expected charts to remain visible after metadata corruption. Its expectation is now zero portfolio charts during the stop condition and restoration of both charts only after original metadata are restored. This reflects the stronger gate rather than relaxing a financial or integrity check.
+
+Executed result: all five application suites passed in the complete rerun. See [suite exit codes, UTC timestamps and logs](../outputs/all-tests.json), [integrity and chronological diagnostic](../outputs/validation-controls.json), and [13-scenario financial/grid audit](../outputs/improvements-verification.json). The chronological constrained branch stopped as infeasible on the training sample; that is a process result, not a failed implementation test or permission to weaken the mandate.

@@ -160,20 +160,23 @@ def main():
     (target / 'prices.csv').write_bytes(original_prices + b'\n')
     next(control for control in app.number_input if control.label == 'Expected return objective (%)').set_value(6.5).run()
     assert not app.exception, app.exception
-    assert any('price hash differs' in warning.value for warning in app.warning)
+    assert any('hash differs: prices.csv' in item.value for item in app.error)
+    assert not app.table  # stronger gate stops before any allocation is calculated
     (target / 'prices.csv').write_bytes(original_prices)
     original_metadata = (target / 'data_sources.json').read_bytes()
     (target / 'data_sources.json').write_bytes(original_metadata + b'\n')
     app.run()
     assert not app.exception, app.exception
-    assert any('provenance hash differs' in warning.value for warning in app.warning)
+    assert any('hash differs: data_sources.json' in item.value for item in app.error)
+    assert not app.table
     app.radio[0].set_value('Data & timing').run()
     assert not app.exception, app.exception
-    assert sum(element.type == 'vega_lite_chart' for element in app) == 2
+    assert sum(element.type == 'vega_lite_chart' for element in app) == 0
     assert any('hash differs' in item.value for item in app.error)
     (target / 'data_sources.json').write_bytes(original_metadata)
     app.radio[0].set_value('Data & timing').run()
     assert not app.exception, app.exception
+    assert sum(element.type == 'vega_lite_chart' for element in app) == 2
     assert any('match the verified snapshot hashes' in item.value for item in app.success)
     app.radio[0].set_value('Validation').run()
     assert not app.exception, app.exception
@@ -203,7 +206,7 @@ def main():
                        '100% reserves is infeasible without relaxing return objective',
                        'Fee stress fixed/reoptimized verdicts agree with runner; no double deduction',
                        'PIT formula and strict timestamp boundary verified; Meridian unavailable',
-                       'Changed snapshot/provenance hashes stop signal use in copied app',
+                       'Changed snapshot/provenance hashes stop all local portfolio calculation in copied app',
                        'Illustrative risk ceiling rejects infeasible risk without relaxing rules',
                        'Preserved engine, prices, provenance and all evidence hashes unchanged',
                        'Live-use stop and unmodelled transaction costs displayed',

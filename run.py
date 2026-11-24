@@ -18,6 +18,8 @@ from audit_controls import evaluate, search, signal, fee_stressed, annual_fee
 
 
 def main():
+    from data_integrity import verify
+    verify(ROOT)  # fail before calculations or writing outputs
     generated_at = datetime.now(timezone.utc)
     assets, corr = p.estimate_from_csv(ROOT / 'prices.csv')
     for asset in assets:

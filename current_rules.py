@@ -17,6 +17,8 @@ def verdict(weights, ret, reserve, vol, objective=.065, minimum=.03, ceiling=.06
     selected = limits(objective, minimum, ceiling)
     if not weights or not all(math.isfinite(x) for x in [*weights,ret,reserve,vol]):
         raise ValueError('Portfolio results must be finite and weights nonempty.')
+    if vol<0 or not 0<=reserve<=1+1e-12:
+        raise ValueError('STOP: invalid volatility or reserve share.')
     labels = {'fully_invested':'Weights total = 100%', 'long_only':'All weights >= 0%',
               'return':f'Estimated annual return >= {objective*100:.6g}%',
               'reserve':f'Reserve-eligible weight >= {minimum*100:.6g}%',
@@ -31,9 +33,12 @@ def verdict(weights, ret, reserve, vol, objective=.065, minimum=.03, ceiling=.06
 def evaluate(weights, assets, corr, objective=.065, minimum=.03, ceiling=.065):
     if len(weights) != len(assets):
         raise ValueError('Weight count must match assets.')
+    if not weights or not all(math.isfinite(w) and w>=0 for w in weights) or abs(sum(weights)-1)>1e-12:
+        raise ValueError('STOP: weights must be finite, fully invested and long-only.')
+    covariance = validate_covariance(assets,corr)
     ret = p.expected_return(weights,assets)
     reserve = p.reserve_eligible_weight(weights,assets)
-    vol = p.portfolio_volatility(weights,p.covariance_matrix(assets,corr))
+    vol = p.portfolio_volatility(weights,covariance)
     return {'weights':weights,'return':ret,'reserve_weight':reserve,'volatility':vol,
             **verdict(weights,ret,reserve,vol,objective,minimum,ceiling)}
 
@@ -41,11 +46,18 @@ def evaluate(weights, assets, corr, objective=.065, minimum=.03, ceiling=.065):
 def search(assets,corr,objective=.065,minimum=.03,ceiling=.065):
     limits(objective,minimum,ceiling)
     # Validate the full covariance, not just the winning candidate variance.
-    covariance = np.asarray(p.covariance_matrix(assets,corr))
-    if np.linalg.eigvalsh(covariance).min() < -1e-12:
-        raise ValueError('Covariance must be positive semidefinite.')
+    validate_covariance(assets,corr)
     answer = archived.search(assets,corr,objective,minimum,ceiling)
     return None if answer is None else evaluate(answer['weights'],assets,corr,objective,minimum,ceiling)
+
+
+def validate_covariance(assets,corr):
+    if not all(isinstance(a.get('reserve_eligible'),(bool,np.bool_)) for a in assets):
+        raise ValueError('STOP: reserve eligibility must be explicitly Boolean.')
+    covariance = np.asarray(p.covariance_matrix(assets,corr))
+    if not np.isfinite(covariance).all() or np.linalg.eigvalsh(covariance).min() < -1e-12:
+        raise ValueError('STOP: covariance must be finite and positive semidefinite.')
+    return covariance
 
 
 def saved_verdict(name, scenario):

@@ -1,0 +1,17 @@
+{
+  "purpose": "Reviewed immutable portfolio sources and frozen committee numerical record; new release required for changes",
+  "sha256": {
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+    "evidence/Lab 13/Lab13.md": "57a25370efed176bf51ecfd288d0f8677522e513985afcca08eb358963dfe64f",
+    "docs/cost-data-card.md": "9966ad60a0ffcce79ff0e02536edd41f26e2ae2b21ccb910fadfb472bd4f0833",
+    "evidence/lab 15/download_prices.py": "fc3e46d08fec068d119169d2b7041ec11c1badb559c8f855e43f67daa1db6034",
+    "evidence/lab 15/raw/SGOV_daily.csv": "4dddae49cedce57d3a3ea22bab3fbc3ac5c010247ba016bd639986bf943d82a4",
+    "evidence/lab 15/raw/VGIT_daily.csv": "693148ff17fac9a6a911d491e34a300e4ae7cbf4b3992132aec8667e1b61bbc7",
+    "evidence/lab 15/raw/VCIT_daily.csv": "9ad86234a7d06e4ad90a67bfaaa8ff63ce82579350d597c62c4845fb39948adb",
+    "evidence/lab 15/raw/ACWI_daily.csv": "8215d495e8b690418812a9119939e3f731f05704b8eada81152ee669955cb356",
+    "outputs/committee_snapshot.json": "8da14c4267a395a371cf81dd27ba1ec5a31b14a189f005ef9855116a604fc861"
+  }
+}

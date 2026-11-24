@@ -11,6 +11,7 @@ from portfolio_view import render_portfolio
 from reconciliation import render as render_reconciliation
 from reconciliation import history as portfolio_history
 from current_rules import saved_verdict
+from data_integrity import load_committee, verify as verify_frozen
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE = ROOT / 'evidence'
@@ -28,6 +29,8 @@ def read_markdown(relative_path):
 
 
 def show_portfolio_summary(results):
+    verify_frozen(ROOT)
+    st.caption('FROZEN COMMITTEE RECORD: sealed snapshot; interactive scenarios and retrospective diagnostics do not amend it.')
     scenarios = results['scenarios']
     baseline = scenarios['Constrained baseline']
     estimate_stress = scenarios['Reoptimized stress']
@@ -211,9 +214,9 @@ def show_portfolio_summary(results):
         mime='text/markdown',
     )
     download_columns[1].download_button(
-        'Download scenario results (JSON)',
+        'Download frozen committee results (JSON)',
         data=json.dumps(results, indent=2),
-        file_name='results.json',
+        file_name='committee_snapshot.json',
         mime='application/json',
     )
 
@@ -498,6 +501,34 @@ def render_lab_timeline():
 
 def render_validation(results):
     st.subheader('Validation and reproducibility')
+    from chronological import run as chronological_run
+    with st.expander('Data integrity and chronological robustness', expanded=True):
+        try:
+            audited = verify_frozen(ROOT)
+            st.success('Frozen source hashes, recorded timing and raw-to-monthly transformations verified.')
+            st.caption(audited['limitation'])
+            diagnostic = chronological_run(audited['prices'])
+            if diagnostic['constrained_evaluation'] is None:
+                st.warning(diagnostic['status'])
+            else:
+                st.write(diagnostic['status'])
+            st.caption(diagnostic['limitations'])
+            st.json(diagnostic)
+        except (OSError,ValueError,KeyError,TypeError) as error:
+            st.error(f'STOP: validation unavailable: {error}')
+    with st.expander('Blank human validation templates'):
+        for label,name in [('Your AI-off Locked Changed-Input Record','templates/AI_OFF_LOCKED_CHANGED_INPUT.md'),
+                           ('Independent partner cold run','templates/PARTNER_COLD_RUN.md')]:
+            st.download_button(label,(ROOT/name).read_bytes(),Path(name).name,'text/markdown')
+        st.caption('Unfilled templates only. No input selection, prediction, human completion or independent run is supplied by the assistant.')
+    with st.expander('Validation controls, source recheck and limitations'):
+        st.markdown(read_markdown('docs/validation-controls.md'))
+    all_checks = ROOT/'outputs/all-tests.json'
+    if all_checks.exists():
+        all_record = json.loads(all_checks.read_text(encoding='utf-8'))
+        st.write('Latest automated suite status: ' + all_record['status'])
+        st.caption(all_record['scope'])
+        st.dataframe([{'Suite':r['suite'],'Status':r['status'],'Exit code':r['exit_code']} for r in all_record['results']], hide_index=True)
     verification_path = ROOT / 'outputs' / 'prep-verification.json'
     if verification_path.exists():
         verification = json.loads(verification_path.read_text(encoding='utf-8'))
@@ -522,7 +553,7 @@ def render_validation(results):
         '- Company-screening views do not provide independent validation of the ETF model.\n'
         '- A passing estimate is not proof of future performance; keep the recommendation simulation-only.'
     )
-    st.subheader('Locked Changed-Input Record')
+    st.subheader('Archived AI-assisted locked test — not your AI-off record')
     st.json(json.loads((ROOT / 'docs/locked-input.json').read_text()))
     receipt = ROOT / 'docs/locked-commit.json'
     outcome = ROOT / 'outputs/locked-result.json'
@@ -540,7 +571,9 @@ def render_validation(results):
 
 
 try:
-    results = json.loads((ROOT / 'outputs' / 'results.json').read_text(encoding='utf-8'))
+    # Keep section navigation available for repair/inspection when a sealed input fails.
+    # Portfolio sections enforce the shared gate below; research evidence stays accessible.
+    results = None
     prices = pd.read_csv(ROOT / 'prices.csv', index_col=0)
     source = json.loads((ROOT / 'data_sources.json').read_text(encoding='utf-8'))
 
@@ -552,6 +585,8 @@ try:
         'Company research & labs',
         'Validation',
     ], key='app_section')
+    if section in ('Committee dashboard','Mandate reconciliation','Validation','Data & timing'):
+        results = load_committee(ROOT)
     if section == 'Committee dashboard':
         show_portfolio_summary(results)
         st.caption('PASS/FAIL above covers the proposed numerical pilot only. Open Mandate reconciliation for every original Lab 13 requirement and unresolved controls.')
