@@ -1,0 +1,7 @@
+{
+  "result_path": "outputs/mason-locked-result.json",
+  "result_sha256": "a6e6a85b2a5416fdb0499c517567eea806a43a4fe6ee3264a1c351e2f1987a2f",
+  "original_run_at_utc": "2026-11-24T01:24:50.924398+00:00",
+  "pre_run_commit_sha": "462e6e2f38e0499d78bde4eedc4f1e927bd6d210",
+  "purpose": "Preserve recorded first execution; app recomputations do not overwrite this result"
+}

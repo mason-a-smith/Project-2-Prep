@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-24T01:09:00.232425+00:00",
+  "generated_at_utc": "2026-11-24T01:27:38.366969+00:00",
   "model_decision_date": "2026-11-17",
   "prep_review_date": "2026-11-23",
   "recommendation": "Pilot in simulation only; defer capital allocation pending confirmed mandate and validation.",
@@ -343,7 +343,7 @@
   "sha256": {
     "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
     "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
-    "app.py": "05587f9e74f43c342e3a79cc2063ce9126f78177c02b3369b2528a126e9f68b1",
+    "app.py": "e6d26f5421601261406dd40f9f796af1ac4f743d69e20b09b91f71e321bf70a2",
     "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
     "run.py": "e7ad6c770908dc75459c43a0a432cf00e989b08efdb5b63d04a4a320e623138b",
     "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0"

@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 R = Path(__file__).resolve().parent
-suites = ['verify_validation.py','verify_reconciliation.py','verify_improvements.py','verify_final.py','verify_prework.py']
+suites = ['verify_mason_locked_record.py','verify_validation.py','verify_reconciliation.py','verify_improvements.py','verify_final.py','verify_prework.py']
 results=[]
 for suite in suites:
     started = datetime.now(timezone.utc)
@@ -16,7 +16,7 @@ for suite in suites:
                     'output':run.stdout,'stderr':run.stderr})
     print(f'{suite}: {results[-1]["status"]}',flush=True)
 record={'status':'PASS' if all(x['exit_code']==0 for x in results) else 'FAIL',
-        'scope':'Automated assistant-run implementation checks only; no human AI-off record or independent partner validation',
+        'scope':'Automated assistant-run implementation checks; user-supplied prediction is recorded separately, with no independent verification of AI-off authorship or partner cold run',
         'results':results}
 (R/'outputs/all-tests.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
 raise SystemExit(0 if record['status']=='PASS' else 1)

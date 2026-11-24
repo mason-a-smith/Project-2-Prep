@@ -1,0 +1,18 @@
+{
+  "purpose": "Evidence-only hand-in bundle; runnable full application is in the linked GitHub repository",
+  "repository": "https://github.com/mason-a-smith/Project-2-Prep",
+  "pre_run_commit": "462e6e2f38e0499d78bde4eedc4f1e927bd6d210",
+  "file_sha256": {
+    "docs/mason-locked-prediction.md": "27ea1c0442648ed8fa2a4e4790a4ea58ca57dfbb788bf2e0a9a4d95eb734aca2",
+    "docs/mason-locked-input.json": "ef74f92ec5d43e0740ec9fe60a69c80d089eba16c763ddf2f3947011294fa331",
+    "docs/mason-locked-commit.json": "bbc59cb571e679bd50471f01c3dfb25f77dde9818aaacdba61003438d00af135",
+    "docs/mason-locked-result-receipt.json": "f194937c32dbd9d5e7729c8c792251bce7d9d681b4f80dd4447078358dbd066e",
+    "docs/mason-locked-submission.md": "28705b88788a6169be81a7140911b11798547d1673211e2843f26046ccc3b87a",
+    "outputs/mason-locked-result.json": "a6e6a85b2a5416fdb0499c517567eea806a43a4fe6ee3264a1c351e2f1987a2f",
+    "outputs/mason-locked-verification.json": "2345f4badda6105ee314c1a7c81786bbcef52ea7af20a0aa2ac5f77476f868ed",
+    "outputs/all-tests.json": "5fc2adccd44b969ffe106c3e0d022e7e91425dbce8df4fd8c6ad1726274d71f4",
+    "mason_locked_run.py": "f652ce807e34573b7c50bfc80debc44eb4b119cef9def1cf3cf93444c0d21736",
+    "mason_record.py": "53c8e9d767b466cefb7d4a6c34a566b5fcbbcb6fbddfe9a422442285e11d615e",
+    "verify_mason_locked_record.py": "c94c208bd7286fa22fd27312bea439f3d4aa04e4cafaed74ca938b8f60e88118"
+  }
+}

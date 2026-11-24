@@ -12,6 +12,7 @@ from reconciliation import render as render_reconciliation
 from reconciliation import history as portfolio_history
 from current_rules import saved_verdict
 from data_integrity import load_committee, verify as verify_frozen
+from mason_record import render as render_mason_record
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE = ROOT / 'evidence'
@@ -234,6 +235,8 @@ def show_portfolio_summary(results):
              'Feasibility after reoptimization permits further paper review only; it never authorizes live capital.')
     with st.expander('Read the full decision memo draft'):
         st.markdown(read_markdown('docs/decision-memo.md'))
+    with st.expander("Mason's locked allocation comparison"):
+        render_mason_record(ROOT)
 
 
 def show_market_data_and_timing(prices, source, results):
@@ -501,6 +504,7 @@ def render_lab_timeline():
 
 def render_validation(results):
     st.subheader('Validation and reproducibility')
+    render_mason_record(ROOT)
     from chronological import run as chronological_run
     with st.expander('Data integrity and chronological robustness', expanded=True):
         try:

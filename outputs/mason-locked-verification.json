@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-11-24T01:27:21.609160+00:00",
+  "checks": [
+    "Pre-run commit timestamp precedes recorded execution",
+    "User weights and prediction preserved",
+    "Independent centered-cross-product covariance and scalar return calculations",
+    "All actual rule verdicts and prediction comparisons",
+    "App recalculation visible in dashboard and Validation",
+    "Changed prediction/specification/result rejected",
+    "No submitted or frozen evidence rewritten"
+  ],
+  "source_sha256": {
+    "docs/mason-locked-prediction.md": "27ea1c0442648ed8fa2a4e4790a4ea58ca57dfbb788bf2e0a9a4d95eb734aca2",
+    "docs/mason-locked-input.json": "ef74f92ec5d43e0740ec9fe60a69c80d089eba16c763ddf2f3947011294fa331",
+    "mason_locked_run.py": "f652ce807e34573b7c50bfc80debc44eb4b119cef9def1cf3cf93444c0d21736",
+    "docs/mason-locked-commit.json": "bbc59cb571e679bd50471f01c3dfb25f77dde9818aaacdba61003438d00af135",
+    "docs/mason-locked-result-receipt.json": "f194937c32dbd9d5e7729c8c792251bce7d9d681b4f80dd4447078358dbd066e",
+    "outputs/mason-locked-result.json": "a6e6a85b2a5416fdb0499c517567eea806a43a4fe6ee3264a1c351e2f1987a2f",
+    "outputs/committee_snapshot.json": "8da14c4267a395a371cf81dd27ba1ec5a31b14a189f005ef9855116a604fc861",
+    "integrity-manifest.json": "5328aa7958c77a9603f3c7d97e8c5b7c04d81533c9b559739ef5bd13c1cc7c52"
+  },
+  "scope": "Assistant-run verification of user-submitted prediction and actual model run; AI-off authorship self-reported, not independently verified; no partner cold run"
+}

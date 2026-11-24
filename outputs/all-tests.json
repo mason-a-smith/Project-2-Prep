@@ -1,51 +1,60 @@
 {
   "status": "PASS",
-  "scope": "Automated assistant-run implementation checks only; no human AI-off record or independent partner validation",
+  "scope": "Automated assistant-run implementation checks; user-supplied prediction is recorded separately, with no independent verification of AI-off authorship or partner cold run",
   "results": [
     {
+      "suite": "verify_mason_locked_record.py",
+      "started_at_utc": "2026-11-24T01:27:16.377059+00:00",
+      "completed_at_utc": "2026-11-24T01:27:21.858805+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "output": "{\n  \"status\": \"PASS\",\n  \"pre_run_commit\": \"462e6e2f38e0499d78bde4eedc4f1e927bd6d210\",\n  \"revised_return\": 0.051133790852839145,\n  \"revised_volatility\": 0.04795115728508332\n}\n",
+      "stderr": "2026-11-23 19:27:19.239 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+    },
+    {
       "suite": "verify_validation.py",
-      "started_at_utc": "2026-11-24T01:08:15.670824+00:00",
-      "completed_at_utc": "2026-11-24T01:08:28.949065+00:00",
+      "started_at_utc": "2026-11-24T01:27:21.858859+00:00",
+      "completed_at_utc": "2026-11-24T01:27:27.161854+00:00",
       "exit_code": 0,
       "status": "PASS",
       "output": "{\n  \"status\": \"PASS\",\n  \"checks\": 12,\n  \"chronological_status\": \"CONSTRAINED STOP: no feasible training allocation\"\n}\n",
-      "stderr": "2026-11-23 19:08:24.654 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+      "stderr": "2026-11-23 19:27:25.530 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
     },
     {
       "suite": "verify_reconciliation.py",
-      "started_at_utc": "2026-11-24T01:08:28.949214+00:00",
-      "completed_at_utc": "2026-11-24T01:08:38.985063+00:00",
+      "started_at_utc": "2026-11-24T01:27:27.161897+00:00",
+      "completed_at_utc": "2026-11-24T01:27:30.784507+00:00",
       "exit_code": 0,
       "status": "PASS",
-      "output": "{\n  \"verified_at_utc\": \"2026-11-24T01:08:38.496295+00:00\",\n  \"status\": \"PASS\",\n  \"checks\": [\n    \"First-period drawdown includes initial wealth\",\n    \"Geometric calendar compounding and partial-year exclusion\",\n    \"Known annual-rebalance NAV and one-way turnover\",\n    \"Invalid input rejection\",\n    \"Independent buy-and-hold fund-level reconciliation\",\n    \"All S1\\u2013S10 mapped separately from pilot\",\n    \"All reconciliation selectors, status filter and source search\",\n    \"Frozen engine, data and locked evidence unchanged\"\n  ],\n  \"baseline_annual_rebalance_diagnostic\": {\n    \"max_drawdown\": -0.08557563816371272,\n    \"worst_month\": -0.027022678999184868,\n    \"worst_12_months\": -0.06319978697647177,\n    \"worst_calendar\": -0.05407806718457853,\n    \"cagr\": 0.06756397805261738,\n    \"annual_volatility\": 0.05135794759125879\n  },\n  \"calendar_years\": [\n    {\n      \"year\": 2022,\n      \"return\": -0.05407806718457853\n    },\n    {\n      \"year\": 2023,\n      \"return\": 0.11125717538750757\n    },\n    {\n      \"year\": 2024,\n      \"return\": 0.09537135479402603\n    },\n    {\n      \"year\": 2025,\n      \"return\": 0.10601445530689002\n    }\n  ],\n  \"source_sha256\": {\n    \"portfolio.py\": \"863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b\",\n    \"audit_controls.py\": \"667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0\",\n    \"prices.csv\": \"fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1\",\n    \"data_sources.json\": \"e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8\",\n    \"docs/locked-input.json\": \"6d92380fede8211fe460d673c38f982d61669b9db94dd540bdaff62808b46b7b\",\n    \"docs/locked-commit.json\": \"b55d7bde98fbaceaa02c9fd80d2bb106ff12cf5c4e52084a695c11cbf22308ba\",\n    \"outputs/locked-result.json\": \"3a39b081230032d6e87bd036f821b185529fd0d3454712bc68741ec6a5ad150d\",\n    \"evidence/Lab 13/Lab13.md\": \"57a25370efed176bf51ecfd288d0f8677522e513985afcca08eb358963dfe64f\"\n  }\n}\n",
-      "stderr": "2026-11-23 19:08:33.564 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+      "output": "{\n  \"verified_at_utc\": \"2026-11-24T01:27:30.506131+00:00\",\n  \"status\": \"PASS\",\n  \"checks\": [\n    \"First-period drawdown includes initial wealth\",\n    \"Geometric calendar compounding and partial-year exclusion\",\n    \"Known annual-rebalance NAV and one-way turnover\",\n    \"Invalid input rejection\",\n    \"Independent buy-and-hold fund-level reconciliation\",\n    \"All S1\\u2013S10 mapped separately from pilot\",\n    \"All reconciliation selectors, status filter and source search\",\n    \"Frozen engine, data and locked evidence unchanged\"\n  ],\n  \"baseline_annual_rebalance_diagnostic\": {\n    \"max_drawdown\": -0.08557563816371272,\n    \"worst_month\": -0.027022678999184868,\n    \"worst_12_months\": -0.06319978697647177,\n    \"worst_calendar\": -0.05407806718457853,\n    \"cagr\": 0.06756397805261738,\n    \"annual_volatility\": 0.05135794759125879\n  },\n  \"calendar_years\": [\n    {\n      \"year\": 2022,\n      \"return\": -0.05407806718457853\n    },\n    {\n      \"year\": 2023,\n      \"return\": 0.11125717538750757\n    },\n    {\n      \"year\": 2024,\n      \"return\": 0.09537135479402603\n    },\n    {\n      \"year\": 2025,\n      \"return\": 0.10601445530689002\n    }\n  ],\n  \"source_sha256\": {\n    \"portfolio.py\": \"863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b\",\n    \"audit_controls.py\": \"667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0\",\n    \"prices.csv\": \"fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1\",\n    \"data_sources.json\": \"e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8\",\n    \"docs/locked-input.json\": \"6d92380fede8211fe460d673c38f982d61669b9db94dd540bdaff62808b46b7b\",\n    \"docs/locked-commit.json\": \"b55d7bde98fbaceaa02c9fd80d2bb106ff12cf5c4e52084a695c11cbf22308ba\",\n    \"outputs/locked-result.json\": \"3a39b081230032d6e87bd036f821b185529fd0d3454712bc68741ec6a5ad150d\",\n    \"evidence/Lab 13/Lab13.md\": \"57a25370efed176bf51ecfd288d0f8677522e513985afcca08eb358963dfe64f\"\n  }\n}\n",
+      "stderr": "2026-11-23 19:27:28.937 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
     },
     {
       "suite": "verify_improvements.py",
-      "started_at_utc": "2026-11-24T01:08:38.985179+00:00",
-      "completed_at_utc": "2026-11-24T01:08:52.868550+00:00",
+      "started_at_utc": "2026-11-24T01:27:30.784713+00:00",
+      "completed_at_utc": "2026-11-24T01:27:35.509036+00:00",
       "exit_code": 0,
       "status": "PASS",
-      "output": "{\n  \"verified_at_utc\": \"2026-11-24T01:08:52.284879+00:00\",\n  \"status\": \"PASS\",\n  \"scenario_count\": 13,\n  \"independent_grid_points\": 1771,\n  \"checks\": [\n    \"Independent means/covariance/baselines\",\n    \"All saved financial results recomputed\",\n    \"Independent exhaustive grid minima and infeasibility\",\n    \"Expenses, payout arithmetic and real compounding\",\n    \"Signal formula and availability\",\n    \"Nondefault rule labels, fee labels, window and cap interactions\",\n    \"All six sections and training losses unavailable\",\n    \"Frozen artifacts unchanged\"\n  ],\n  \"baseline_historical\": {\n    \"max_drawdown\": -0.08557563816371272,\n    \"worst_calendar\": -0.05407806718457853,\n    \"worst_12_months\": -0.06319978697647177\n  },\n  \"scope\": \"Assistant-run implementation audit; not partner review or investment authorization\"\n}\n",
-      "stderr": "2026-11-23 19:08:43.369 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+      "output": "{\n  \"verified_at_utc\": \"2026-11-24T01:27:35.262909+00:00\",\n  \"status\": \"PASS\",\n  \"scenario_count\": 13,\n  \"independent_grid_points\": 1771,\n  \"checks\": [\n    \"Independent means/covariance/baselines\",\n    \"All saved financial results recomputed\",\n    \"Independent exhaustive grid minima and infeasibility\",\n    \"Expenses, payout arithmetic and real compounding\",\n    \"Signal formula and availability\",\n    \"Nondefault rule labels, fee labels, window and cap interactions\",\n    \"All six sections and training losses unavailable\",\n    \"Frozen artifacts unchanged\"\n  ],\n  \"baseline_historical\": {\n    \"max_drawdown\": -0.08557563816371272,\n    \"worst_calendar\": -0.05407806718457853,\n    \"worst_12_months\": -0.06319978697647177\n  },\n  \"scope\": \"Assistant-run implementation audit; not partner review or investment authorization\"\n}\n",
+      "stderr": "2026-11-23 19:27:32.607 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
     },
     {
       "suite": "verify_final.py",
-      "started_at_utc": "2026-11-24T01:08:52.868663+00:00",
-      "completed_at_utc": "2026-11-24T01:09:06.431543+00:00",
+      "started_at_utc": "2026-11-24T01:27:35.509066+00:00",
+      "completed_at_utc": "2026-11-24T01:27:40.391939+00:00",
       "exit_code": 0,
       "status": "PASS",
       "output": "PASS: financial scenarios, actual-limit labels, source gate, and all six app sections.\n",
-      "stderr": "2026-11-23 19:09:00.852 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+      "stderr": "2026-11-23 19:27:38.557 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
     },
     {
       "suite": "verify_prework.py",
-      "started_at_utc": "2026-11-24T01:09:06.431611+00:00",
-      "completed_at_utc": "2026-11-24T01:09:27.076207+00:00",
+      "started_at_utc": "2026-11-24T01:27:40.391972+00:00",
+      "completed_at_utc": "2026-11-24T01:27:47.363994+00:00",
       "exit_code": 0,
       "status": "PASS",
-      "output": "{\n  \"date\": \"2026-11-23\",\n  \"fresh_directory\": \"C:\\\\Users\\\\mason\\\\AppData\\\\Local\\\\Temp\\\\project2-prep-0rbeiv75\\\\Project2\",\n  \"fresh_directory_command\": \"Installed Python executable + copied run.py; working directory outside package\",\n  \"fresh_directory_exit_code\": 0,\n  \"environment_limit\": \"Same installed dependencies; no independent partner or clean-machine claim\",\n  \"app_checks\": [\n    \"Integrated dashboard renders risk-return, return-comparison, and allocation charts\",\n    \"Data page renders price-history and fund risk-return charts\",\n    \"Company page renders five-year financial-trend charts\",\n    \"Integrated committee dashboard matches saved model scenarios\",\n    \"Company-screen view retains missing COST R&D facts and responds to threshold changes\",\n    \"Default ACWI weight 35%\",\n    \"Reduced-return ACWI weight 40%\",\n    \"Same-sample baseline returns and rule verdicts match runner\",\n    \"Last-36-month ACWI weight 15%; all-month controls restored\",\n    \"100% reserves is infeasible without relaxing return objective\",\n    \"Fee stress fixed/reoptimized verdicts agree with runner; no double deduction\",\n    \"PIT formula and strict timestamp boundary verified; Meridian unavailable\",\n    \"Changed snapshot/provenance hashes stop all local portfolio calculation in copied app\",\n    \"Illustrative risk ceiling rejects infeasible risk without relaxing rules\",\n    \"Preserved engine, prices, provenance and all evidence hashes unchanged\",\n    \"Live-use stop and unmodelled transaction costs displayed\",\n    \"100% objective shows no mix meets the objective\"\n  ],\n  \"local_document_links_checked\": 80,\n  \"scope\": \"Assistant-run numerical, packaging, and Streamlit AppTest checks; no partner or clean-machine run\"\n}\n",
-      "stderr": "2026-11-23 19:09:15.719 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
+      "output": "{\n  \"date\": \"2026-11-23\",\n  \"fresh_directory\": \"C:\\\\Users\\\\mason\\\\AppData\\\\Local\\\\Temp\\\\project2-prep-juphy157\\\\Project2\",\n  \"fresh_directory_command\": \"Installed Python executable + copied run.py; working directory outside package\",\n  \"fresh_directory_exit_code\": 0,\n  \"environment_limit\": \"Same installed dependencies; no independent partner or clean-machine claim\",\n  \"app_checks\": [\n    \"Integrated dashboard renders risk-return, return-comparison, and allocation charts\",\n    \"Data page renders price-history and fund risk-return charts\",\n    \"Company page renders five-year financial-trend charts\",\n    \"Integrated committee dashboard matches saved model scenarios\",\n    \"Company-screen view retains missing COST R&D facts and responds to threshold changes\",\n    \"Default ACWI weight 35%\",\n    \"Reduced-return ACWI weight 40%\",\n    \"Same-sample baseline returns and rule verdicts match runner\",\n    \"Last-36-month ACWI weight 15%; all-month controls restored\",\n    \"100% reserves is infeasible without relaxing return objective\",\n    \"Fee stress fixed/reoptimized verdicts agree with runner; no double deduction\",\n    \"PIT formula and strict timestamp boundary verified; Meridian unavailable\",\n    \"Changed snapshot/provenance hashes stop all local portfolio calculation in copied app\",\n    \"Illustrative risk ceiling rejects infeasible risk without relaxing rules\",\n    \"Preserved engine, prices, provenance and all evidence hashes unchanged\",\n    \"Live-use stop and unmodelled transaction costs displayed\",\n    \"100% objective shows no mix meets the objective\"\n  ],\n  \"local_document_links_checked\": 91,\n  \"scope\": \"Assistant-run numerical, packaging, and Streamlit AppTest checks; no partner or clean-machine run\"\n}\n",
+      "stderr": "2026-11-23 19:27:43.806 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.\n"
     }
   ]
 }

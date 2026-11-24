@@ -1,0 +1,103 @@
+{
+  "run_at_utc": "2026-11-24T01:24:50.924398+00:00",
+  "completed_at_utc": "2026-11-24T01:24:51.062951+00:00",
+  "authorship": "User-supplied prediction; AI-off preparation self-reported by Mason. Execution and arithmetic checks assisted by OpenAI Codex; not independent validation.",
+  "pre_run_commit": {
+    "commit_sha": "462e6e2f38e0499d78bde4eedc4f1e927bd6d210",
+    "commit_url": "https://github.com/mason-a-smith/Project-2-Prep/commit/462e6e2f38e0499d78bde4eedc4f1e927bd6d210",
+    "committed_at_utc": "2026-11-24T01:24:27Z",
+    "verified_before_run": true,
+    "locked_sha256": {
+      "docs/mason-locked-prediction.md": "27ea1c0442648ed8fa2a4e4790a4ea58ca57dfbb788bf2e0a9a4d95eb734aca2",
+      "docs/mason-locked-input.json": "ef74f92ec5d43e0740ec9fe60a69c80d089eba16c763ddf2f3947011294fa331",
+      "mason_locked_run.py": "f652ce807e34573b7c50bfc80debc44eb4b119cef9def1cf3cf93444c0d21736"
+    }
+  },
+  "weight_order": [
+    "SGOV",
+    "VGIT",
+    "VCIT",
+    "ACWI"
+  ],
+  "original": {
+    "weights": [
+      0.65,
+      0,
+      0,
+      0.35
+    ],
+    "return": 0.06664254902889966,
+    "reserve_weight": 0.65,
+    "volatility": 0.05280673706378061,
+    "limits": {
+      "return_minimum": 0.065,
+      "reserve_minimum": 0.03,
+      "volatility_ceiling": 0.065
+    },
+    "labels": {
+      "fully_invested": "Weights total = 100%",
+      "long_only": "All weights >= 0%",
+      "return": "Estimated annual return >= 6.5%",
+      "reserve": "Reserve-eligible weight >= 3%",
+      "risk": "Annual sample volatility <= 6.5%"
+    },
+    "checks": {
+      "fully_invested": true,
+      "long_only": true,
+      "return": true,
+      "reserve": true,
+      "risk": true
+    },
+    "feasible": true,
+    "failed_rules": [],
+    "live_capital_authorized": false
+  },
+  "revised": {
+    "weights": [
+      0.55,
+      0.1,
+      0.1,
+      0.25
+    ],
+    "return": 0.051133790852839145,
+    "reserve_weight": 0.55,
+    "volatility": 0.04795115728508332,
+    "limits": {
+      "return_minimum": 0.065,
+      "reserve_minimum": 0.03,
+      "volatility_ceiling": 0.065
+    },
+    "labels": {
+      "fully_invested": "Weights total = 100%",
+      "long_only": "All weights >= 0%",
+      "return": "Estimated annual return >= 6.5%",
+      "reserve": "Reserve-eligible weight >= 3%",
+      "risk": "Annual sample volatility <= 6.5%"
+    },
+    "checks": {
+      "fully_invested": true,
+      "long_only": true,
+      "return": false,
+      "reserve": true,
+      "risk": true
+    },
+    "feasible": false,
+    "failed_rules": [
+      "Estimated annual return >= 6.5%"
+    ],
+    "live_capital_authorized": false
+  },
+  "prediction_outcomes": {
+    "lower_expected_return": true,
+    "lower_annualized_volatility": true,
+    "fails_minimum_return": true,
+    "passes_reserve": true,
+    "passes_volatility": true
+  },
+  "all_predictions_supported": true,
+  "return_change_basis_points": -155.0875817606051,
+  "volatility_change_percentage_points": -0.4855579778697293,
+  "decision": "Reject revised allocation: it fails selected pilot rules; retain original only conditionally for simulation review.",
+  "live_capital_authorized": false,
+  "limits": "Historical arithmetic return and sample covariance estimates, not forecasts. No new cost stress, no foundation payout path, no independent partner validation. This result does not establish original mandate compliance."
+}

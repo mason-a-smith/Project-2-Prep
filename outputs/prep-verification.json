@@ -1,6 +1,6 @@
 {
   "date": "2026-11-23",
-  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-0rbeiv75\\Project2",
+  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-prep-juphy157\\Project2",
   "fresh_directory_command": "Installed Python executable + copied run.py; working directory outside package",
   "fresh_directory_exit_code": 0,
   "environment_limit": "Same installed dependencies; no independent partner or clean-machine claim",
@@ -23,6 +23,6 @@
     "Live-use stop and unmodelled transaction costs displayed",
     "100% objective shows no mix meets the objective"
   ],
-  "local_document_links_checked": 80,
+  "local_document_links_checked": 91,
   "scope": "Assistant-run numerical, packaging, and Streamlit AppTest checks; no partner or clean-machine run"
 }

@@ -4,6 +4,10 @@ The analysis and decision are mine (Mason Smith); education, not investment advi
 
 # Portfolio decision studio
 
+Mason's user-supplied locked allocation test is complete: [submission summary and actual result](docs/mason-locked-submission.md). The user prediction was committed before execution. The app recalculates and displays the original versus **55% SGOV / 10% VGIT / 10% VCIT / 25% ACWI** comparison in Validation and the dashboard's **Mason's locked allocation comparison** expander. Prediction authorship is self-reported AI-off; transcription, execution and verification were AI-assisted. The existing AI-assisted reserve test remains separate; no partner run is claimed.
+
+Hand-in evidence bundle: [Mason_Locked_Changed_Input_Submission.zip](outputs/Mason_Locked_Changed_Input_Submission.zip). This evidence-only ZIP includes the submitted prediction, receipts, actual results, verification logs and file-hash manifest; the complete runnable app remains in this repository.
+
 Validation update: frozen committee results now use a sealed source/snapshot manifest; corrupted inputs stop calculation. Interactive selections remain hypothetical. The existing Validation section contains a retrospective first-36/next-24-return test and blank human validation templates. The full dataset was previously examined, so this is not an untouched holdout. Run **all application automated checks** with `uv run --locked python verify_all.py`; see [validation controls and limitations](docs/validation-controls.md).
 
 Current correction: intended user is Mason and the fictional foundation committee; investment horizon is seven years. The committee decision is a paper pilot, with no live capital authorized. [Edition A versus Edition B](docs/edition-and-decision.md) compares the archived prior AI-assisted app with the current corrections. Selected return, reserve and volatility limits now appear accurately in current views; the historical engine and locked evidence remain preserved. See [corrections and verification](docs/application-corrections.md).
