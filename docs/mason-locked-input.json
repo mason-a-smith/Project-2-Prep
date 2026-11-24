@@ -1,0 +1,52 @@
+{
+  "recorded_from_user_at_utc": "2026-11-24T01:23:50.410416+00:00",
+  "authorship": "Prediction and change supplied by Mason Smith, who reports AI-off preparation; Codex transcription only before run",
+  "weight_order": [
+    "SGOV",
+    "VGIT",
+    "VCIT",
+    "ACWI"
+  ],
+  "original_weights": [
+    0.65,
+    0,
+    0,
+    0.35
+  ],
+  "revised_weights": [
+    0.55,
+    0.1,
+    0.1,
+    0.25
+  ],
+  "weight_changes_percentage_points": [
+    -10,
+    10,
+    10,
+    -10
+  ],
+  "unchanged_rules": {
+    "return_minimum": 0.065,
+    "reserve_minimum": 0.03,
+    "volatility_ceiling": 0.065,
+    "reserve_eligible": [
+      "SGOV"
+    ]
+  },
+  "user_predictions": {
+    "lower_expected_return": true,
+    "lower_annualized_volatility": true,
+    "fails_minimum_return": true,
+    "passes_reserve": true,
+    "passes_volatility": true
+  },
+  "frozen_sha256": {
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+    "outputs/committee_snapshot.json": "8da14c4267a395a371cf81dd27ba1ec5a31b14a189f005ef9855116a604fc861",
+    "integrity-manifest.json": "5328aa7958c77a9603f3c7d97e8c5b7c04d81533c9b559739ef5bd13c1cc7c52"
+  },
+  "transcript_sha256": "27ea1c0442648ed8fa2a4e4790a4ea58ca57dfbb788bf2e0a9a4d95eb734aca2"
+}
