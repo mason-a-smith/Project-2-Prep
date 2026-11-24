@@ -1,0 +1,50 @@
+{
+  "verified_at_utc": "2026-11-24T00:32:30.457914+00:00",
+  "status": "PASS",
+  "checks": [
+    "First-period drawdown includes initial wealth",
+    "Geometric calendar compounding and partial-year exclusion",
+    "Known annual-rebalance NAV and one-way turnover",
+    "Invalid input rejection",
+    "Independent buy-and-hold fund-level reconciliation",
+    "All S1\u2013S10 mapped separately from pilot",
+    "All reconciliation selectors, status filter and source search",
+    "Frozen engine, data and locked evidence unchanged"
+  ],
+  "baseline_annual_rebalance_diagnostic": {
+    "max_drawdown": -0.08557563816371272,
+    "worst_month": -0.027022678999184868,
+    "worst_12_months": -0.06319978697647177,
+    "worst_calendar": -0.05407806718457853,
+    "cagr": 0.06756397805261738,
+    "annual_volatility": 0.05135794759125879
+  },
+  "calendar_years": [
+    {
+      "year": 2022,
+      "return": -0.05407806718457853
+    },
+    {
+      "year": 2023,
+      "return": 0.11125717538750757
+    },
+    {
+      "year": 2024,
+      "return": 0.09537135479402603
+    },
+    {
+      "year": 2025,
+      "return": 0.10601445530689002
+    }
+  ],
+  "source_sha256": {
+    "portfolio.py": "863efd0b499ef79f3c64c1e28af0b25595cf9eab419ad2193721b5fa89d2c46b",
+    "audit_controls.py": "667fd2eacd22a33fb5d1fca28b8fb5768092c6979556cf71219d277519ce8bc0",
+    "prices.csv": "fb1ab89b2c06603c13917b5a112b3a24a13ff5872803d560dce28f2490891be1",
+    "data_sources.json": "e6b00f8ded037d2df098c1ea3e888926ceac225dae720933fadcf1ac1306a6e8",
+    "docs/locked-input.json": "6d92380fede8211fe460d673c38f982d61669b9db94dd540bdaff62808b46b7b",
+    "docs/locked-commit.json": "b55d7bde98fbaceaa02c9fd80d2bb106ff12cf5c4e52084a695c11cbf22308ba",
+    "outputs/locked-result.json": "3a39b081230032d6e87bd036f821b185529fd0d3454712bc68741ec6a5ad150d",
+    "evidence/Lab 13/Lab13.md": "57a25370efed176bf51ecfd288d0f8677522e513985afcca08eb358963dfe64f"
+  }
+}

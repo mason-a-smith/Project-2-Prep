@@ -8,6 +8,7 @@ import streamlit as st
 
 import audit_controls as controls
 from portfolio_view import render_portfolio
+from reconciliation import render as render_reconciliation
 
 ROOT = Path(__file__).resolve().parent
 EVIDENCE = ROOT / 'evidence'
@@ -518,6 +519,7 @@ try:
 
     section = st.sidebar.radio('App section', [
         'Committee dashboard',
+        'Mandate reconciliation',
         'Interactive portfolio model',
         'Data & timing',
         'Company research & labs',
@@ -525,6 +527,9 @@ try:
     ], key='app_section')
     if section == 'Committee dashboard':
         show_portfolio_summary(results)
+        st.caption('PASS/FAIL above covers the proposed numerical pilot only. Open Mandate reconciliation for every original Lab 13 requirement and unresolved controls.')
+    elif section == 'Mandate reconciliation':
+        render_reconciliation(results)
     elif section == 'Interactive portfolio model':
         render_portfolio()
     elif section == 'Data & timing':

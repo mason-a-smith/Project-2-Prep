@@ -4,6 +4,8 @@ The analysis and decision are mine (Mason Smith); education, not investment advi
 
 # Decision memo draft
 
+Reconciliation update: the original S1–S10 mandate is reviewed separately in the app's **Mandate reconciliation** section. A numerical pilot PASS is not full mandate compliance. Inflation-adjusted net five-year returns, seven-year sufficiency, actual distributions, liquidity, turnover, instrument restrictions and a future loss guarantee remain unverified. The baseline annual-rebalanced retrospective diagnostic has an 8.5576% maximum month-end drawdown and a 5.4078% worst complete calendar-year loss (2022); these are different measures and do not establish a future 10% annual loss limit. No original engine, data or locked evidence was changed. See [methods and limitations](mandate-reconciliation.md).
+
 **To:** Educational investment committee  
 **Analyst:** Mason Smith  
 **Decision record:** November 17, 2026; preparation review November 23, 2026  

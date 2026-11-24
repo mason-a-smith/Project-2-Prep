@@ -4,6 +4,8 @@ The analysis and decision are mine (Mason Smith); education, not investment advi
 
 # Portfolio decision studio
 
+New: select **Mandate reconciliation** for the complete original Lab 13 S1–S10 review, separate pilot rules, searchable/filterable status table, CSV export, annual-rebalanced or buy-and-hold historical drawdown, worst month, rolling 12-month loss and complete calendar-year losses. The original mandate is not fully tested by the dashboard's numerical pilot PASS. See [methods and change record](docs/mandate-reconciliation.md) and [executed verification](outputs/reconciliation-verification.json). Run `uv run --locked python verify_reconciliation.py` for the added checks.
+
 Start in this Project2 folder with Python 3.11–3.14 and uv installed:
 
 ```powershell
