@@ -1,11 +1,94 @@
 {
-  "observed_at_utc": "2026-11-24T02:21:03.711167+00:00",
-  "source": "Anonymous GitHub codeload ZIP of actual repository",
-  "baseline_commit": "39af61118f040d96e26fc8073061737de463bf9f",
-  "extracted_directory": "C:/Users/mason/AppData/Local/Temp/project2-repository-audit-lgh00kt3/Project-2-Prep-39af61118f040d96e26fc8073061737de463bf9f",
-  "environment": "New .venv; CPython 3.13.15; 34 locked packages installed; shared machine/cache, not independent partner or clean machine",
-  "baseline_readme_result_command_exit_code": 0,
-  "baseline_dashboard_apptest_exit_code": 0,
-  "candidate_release_full_suite_status": "PENDING verified candidate commit",
-  "known_repair": "Optional unpublished raw SEC archive absence must be reported, not fail current app tests; included archives still require original hashes"
+  "status": "PASS",
+  "started_at_utc": "2026-11-24T02:25:15.014371+00:00",
+  "completed_at_utc": "2026-11-24T02:25:58.974353+00:00",
+  "source_commit": "c131fee21bfb4c97e165b1417dc80585bd7d131c",
+  "anonymous_download_url": "https://codeload.github.com/mason-a-smith/Project-2-Prep/zip/c131fee21bfb4c97e165b1417dc80585bd7d131c",
+  "fresh_directory": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-final-repository-gd23ccug\\Project-2-Prep-c131fee21bfb4c97e165b1417dc80585bd7d131c",
+  "scope": "Assistant-run actual repository download, new virtual environment and shared machine/cache; not an independent partner or clean machine",
+  "readme_runner_and_full_suite_commands": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "run.py"
+      ],
+      "started_at_utc": "2026-11-24T02:25:16.404172+00:00",
+      "exit_code": 0,
+      "stdout": "# Executed portfolio output\n\nAI assistance: OpenAI Codex packaged and checked the existing model; the Copilot SDK assistant reviewed the package. Education, not investment advice.\n\nPilot in simulation only; defer capital allocation pending confirmed mandate and validation.\n\nModel decision: November 17, 2026. Preparation review: November 23, 2026. Frozen prices downloaded October 22, 2026; returns October 2021\ufffdSeptember 2026. This run does not update the market data.\n\nProposed educational rules: return >=6.5%, SGOV reserves >=3%, volatility <=6.5%. Weights follow SGOV / VGIT / VCIT / ACWI.\n\n| Scenario | Weights (%) | Return (%) | Volatility (%) | Reserves (%) | Risk rule | Mandate verdict | Current fee exposure $/10,000/year | Incremental fee $/10,000/year |\n| --- | --- | ---: | ---: | ---: | --- | --- | ---: | ---: |\n| Equal weight | 25.0000 / 25.0000 / 25.0000 / 25.0000 | 4.051003 | 6.466667 | 25.0000 | PASS | FAIL: return_at_least_6_5_percent | 11.75 | Not applied |\n| Inverse volatility | 84.0458 / 7.7447 / 5.3927 / 2.8167 | 3.476161 | 1.327369 | 84.0458 | PASS | FAIL: return_at_least_6_5_percent | 8.86 | Not applied |\n| Constrained baseline | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 6.664255 | 5.280674 | 65.0000 | PASS | PASS | 17.05 | Not applied |\n| Fixed baseline under stress | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 6.314255 | 5.280674 | 65.0000 | PASS | FAIL: return_at_least_6_5_percent | 17.05 | Not applied |\n| Reoptimized stress | 60.0000 / 0.0000 / 0.0000 / 40.0000 | 6.685567 | 6.017830 | 60.0000 | PASS | PASS | 18.20 | Not applied |\n| Fixed baseline under fee stress | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 6.493755 | 5.280674 | 65.0000 | PASS | FAIL: return_at_least_6_5_percent | 17.05 | 17.05 |\n| Reoptimized fee stress | 60.0000 / 0.0000 / 0.0000 / 40.0000 | 6.903567 | 6.017830 | 60.0000 | PASS | PASS | 18.20 | 18.20 |\n| Inherited reference benchmark | 0.0000 / 0.0000 / 40.0000 / 60.0000 | 7.541771 | 11.493085 | 0.0000 | FAIL | FAIL: reserve_at_least_3_percent, volatility_at_most_6_5_percent | 20.40 | Not applied |\n| Last 36 months | 85.0000 / 0.0000 / 0.0000 / 15.0000 | 6.849566 | 1.762095 | 85.0000 | PASS | PASS | 12.45 | Not applied |\n| Fixed baseline last 36 months | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 10.062376 | 4.056380 | 65.0000 | PASS | PASS | 17.05 | Not applied |\n| Fixed baseline at 5% risk ceiling | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 6.664255 | 5.280674 | 65.0000 | FAIL | FAIL: volatility_at_most_6_5_percent | 17.05 | Not applied |\n| Fixed baseline transaction cost stress | 65.0000 / 0.0000 / 0.0000 / 35.0000 | 6.414255 | 5.280674 | 65.0000 | PASS | FAIL: return_at_least_6_5_percent | 17.05 | Not applied |\n| Reoptimized transaction cost stress | 60.0000 / 0.0000 / 0.0000 / 40.0000 | 6.835567 | 6.017830 | 60.0000 | PASS | PASS | 18.20 | Not applied |\n\nChanged input: ACWI annual return estimate 12.14131714% to 11.14131714%. Volatilities, correlations, objective, and eligibility stay fixed.\n\nThe fixed allocation loses 0.35 percentage point of return. Reoptimization increases equity by 5 percentage points. These are conditional model estimates; no realized performance or historical point-in-time backtest is established.\n\n## Verification\n\n- Matches archived all-month result to 1e-12\n- Covariance matches independent pandas sample covariance annualized by 12\n- All allocations are long-only and fully invested\n- Fee stress fails fixed weights and passes after reoptimization\n- 5% volatility ceiling stops without relaxing return or reserve rules\n- Signal unavailable at/before snapshot and for unverified sources\n- Impossible 100% annual objective returns no feasible mix\n- Stress fails at fixed weights and passes after reoptimization\n\nDetailed inputs, source hashes, dependency versions, and execution timestamp: [results.json](results.json).\n\n\n## Descriptive point-in-time signal\n\nSeptember 2026 versus August 2026; snapshot available only after October 22 download. No historical Yahoo vintage claim; not an optimizer input.\n\n- SGOV: 0.29586681%\n- VGIT: -2.31707976%\n- VCIT: -3.02167087%\n- ACWI: -1.18869087%\n\nHistorical adjusted-price returns already reflect operating expenses. The illustrative fee stress subtracts only one additional current ratio. Fee sources retrieved November 23 are a later sensitivity overlay, not November 17 information. Spreads and commissions remain unmodelled. See [cost card](../docs/cost-data-card.md).\n\nThe 6.5% volatility ceiling is an AI-assisted illustrative choice made at user request, chosen above the existing 6.0178% stressed volatility; it is not validated client risk appetite. The inherited 40% VCIT / 60% ACWI benchmark is provisional. STOP on infeasibility, unavailable inputs, a rule failure or unsupported historical-as-of claim. Live allocation remains deferred pending client approval and validation.\n\nSaved outputs/VISIBLE_OUTPUT.md and outputs/results.json\n",
+      "stderr": "warning: `VIRTUAL_ENV=C:\\Users\\mason\\Documents\\Courses\\AIFinance2026\\Mason Smith\\Project2\\.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\nUsing CPython 3.13.15 interpreter at: C:\\Users\\mason\\AppData\\Local\\Programs\\Python\\Python313\\python.exe\nCreating virtual environment at: .venv\nInstalled 34 packages in 1.42s\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "verify_all.py"
+      ],
+      "started_at_utc": "2026-11-24T02:25:21.442559+00:00",
+      "exit_code": 0,
+      "stdout": "verify_final_audit.py: PASS\nverify_mason_locked_record.py: PASS\nverify_validation.py: PASS\nverify_reconciliation.py: PASS\nverify_improvements.py: PASS\nverify_final.py: PASS\nverify_prework.py: PASS\n",
+      "stderr": "warning: `VIRTUAL_ENV=C:\\Users\\mason\\Documents\\Courses\\AIFinance2026\\Mason Smith\\Project2\\.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "python",
+        "-c",
+        "import sys; print(sys.executable)"
+      ],
+      "started_at_utc": "2026-11-24T02:25:55.004652+00:00",
+      "exit_code": 0,
+      "stdout": "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-final-repository-gd23ccug\\Project-2-Prep-c131fee21bfb4c97e165b1417dc80585bd7d131c\\.venv\\Scripts\\python.exe\n",
+      "stderr": "warning: `VIRTUAL_ENV=C:\\Users\\mason\\Documents\\Courses\\AIFinance2026\\Mason Smith\\Project2\\.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead\n"
+    }
+  ],
+  "actual_server_command": [
+    "C:\\Users\\mason\\AppData\\Local\\Temp\\project2-final-repository-gd23ccug\\Project-2-Prep-c131fee21bfb4c97e165b1417dc80585bd7d131c\\.venv\\Scripts\\python.exe",
+    "-m",
+    "streamlit",
+    "run",
+    "app.py",
+    "--server.headless",
+    "true",
+    "--server.address",
+    "127.0.0.1",
+    "--server.port",
+    "58900"
+  ],
+  "server_health": true,
+  "server_note": "Direct interpreter is the fresh environment selected by uv; server is terminated after the health check",
+  "all_suite_status": "PASS",
+  "suite_exit_codes": {
+    "verify_final_audit.py": 0,
+    "verify_mason_locked_record.py": 0,
+    "verify_validation.py": 0,
+    "verify_reconciliation.py": 0,
+    "verify_improvements.py": 0,
+    "verify_final.py": 0,
+    "verify_prework.py": 0
+  },
+  "optional_sec_archives_reported": [
+    "evidence/Lab 19/results/raw/AAPL_companyfacts.json",
+    "evidence/Lab 19/results/raw/AAPL_submissions.json",
+    "evidence/Lab 19/results/raw/company_tickers.json",
+    "evidence/Lab 19/results/raw/COST_companyfacts.json",
+    "evidence/Lab 19/results/raw/COST_submissions.json"
+  ],
+  "earlier_baseline_record": {
+    "observed_at_utc": "2026-11-24T02:21:03.711167+00:00",
+    "source": "Anonymous GitHub codeload ZIP of actual repository",
+    "baseline_commit": "39af61118f040d96e26fc8073061737de463bf9f",
+    "extracted_directory": "C:/Users/mason/AppData/Local/Temp/project2-repository-audit-lgh00kt3/Project-2-Prep-39af61118f040d96e26fc8073061737de463bf9f",
+    "environment": "New .venv; CPython 3.13.15; 34 locked packages installed; shared machine/cache, not independent partner or clean machine",
+    "baseline_readme_result_command_exit_code": 0,
+    "baseline_dashboard_apptest_exit_code": 0,
+    "candidate_release_full_suite_status": "PENDING verified candidate commit",
+    "known_repair": "Optional unpublished raw SEC archive absence must be reported, not fail current app tests; included archives still require original hashes"
+  }
 }

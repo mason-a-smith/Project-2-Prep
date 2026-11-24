@@ -10,7 +10,7 @@ Ownership wording remains subject to Mason's personal confirmation. The authorit
 
 | Requirement | Evidence | Audit status / limitation |
 | --- | --- | --- |
-| 1. Running Python web app, stranger README | README; app.py; uv.lock; outputs/repository-reproduction.json; six app sections | Published archive/new-virtual-environment runner and dashboard verified; candidate full-suite/server reproduction tracked in the reproduction record. This is assistant-run, not a partner cold run. |
+| 1. Running Python web app, stranger README | README; app.py; uv.lock; outputs/repository-reproduction.json; six app sections | PASS for tested repository release: anonymous download, new locked environment, README runner, all seven suites and server health. Assistant-run, not a partner cold run or clean machine. |
 | 2. Lab 13 mandate | Original evidence/Lab 13/Lab13.md; searchable reconciliation; proposed-mandate.md | Present with original/provisional authority distinguished. Original operational/future requirements without inputs remain NOT TESTED; no live approval inferred. |
 | 3. Two baselines plus constrained target and rule verdicts | Dashboard and interactive tables; improvements-verification.json | Present; equal and inverse volatility fail return; constrained full-window baseline passes only numerical pilot rules. Actual selected limits shown. |
 | 4. Point-in-time signal/data card | signal-data-card.md; strict download cutoff; raw/source hashes | Present as descriptive September/August context. Post-download availability only; historical Yahoo vintages and uploads are not authenticated. |
@@ -20,6 +20,12 @@ Ownership wording remains subject to Mason's personal confirmation. The authorit
 | 8. Two opening disclosures | First two statements in README/memo and every scripted video opening | Written drafts present; personal confirmation pending. Actual three videos are absent, so spoken openings/live demo cannot be verified. |
 
 **Not ready to claim a fully complete mandatory submission:** actual recordings/transcripts, ownership confirmation, execution-boundary qualification and final receipt/access evidence remain outstanding. A functioning app and correct arithmetic do not replace those human evidence surfaces.
+
+## Completed reproduction and automated results
+
+The actual published candidate [c131fee](https://github.com/mason-a-smith/Project-2-Prep/commit/c131fee21bfb4c97e165b1417dc80585bd7d131c) was anonymously downloaded from GitHub into a new directory. uv created a new virtual environment from the lockfile. The README numerical command, **all seven automated suites**, and an actual Streamlit server health check passed. The server used the fresh environment's Python and was terminated after testing. The five optional unpublished SEC raw archives were explicitly reported absent, while required portfolio sources retained their pinned hashes. Exact command output, UTC timestamps and exit codes are in [repository-reproduction.json](../outputs/repository-reproduction.json).
+
+This is an assistant-run reproduction on the same Windows machine/shared package cache, not a clean-machine or independent partner claim. It verifies the published application files rather than relying on the maintainer's existing environment. Subsequent audit commits only finalize documentation/results; the tested numerical/application source and lockfile remain the candidate's versions.
 
 ## Material corrections made
 
